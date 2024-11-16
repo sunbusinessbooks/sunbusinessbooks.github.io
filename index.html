@@ -41,46 +41,113 @@
         });
     </script>
 
-
-<!-- Диалоговое окно ChatGPT (интеграция в правый нижний угол) -->
-<div id="chat-container">
-    <div id="chat-box">
-        <div id="messages"></div>
+    <!-- Диалоговое окно ChatGPT -->
+    <div id="chat-container">
+        <div id="chat-box">
+            <div id="messages"></div>
+        </div>
+        <input type="text" id="user-input" placeholder="Enter your message..." />
+        <button onclick="sendMessage()">Send</button>
     </div>
-    <input type="text" id="user-input" placeholder="Введите сообщение..." />
-    <button onclick="sendMessage()">Отправить</button>
-</div>
-<!-- Скрипт для чата -->
-<script>
-    const apiKey = 'YOUR_OPENAI_API_KEY'; // Ваш API ключ от OpenAI
 
-    async function sendMessage() {
-        const userInput = document.getElementById("user-input").value;
-        const messagesContainer = document.getElementById("messages");
+    <!-- Скрипт для чата -->
+    <script>
+        async function sendMessage() {
+            const userInput = document.getElementById("user-input").value;
+            const messagesContainer = document.getElementById("messages");
 
-        // Добавляем сообщение пользователя в чат
-        messagesContainer.innerHTML += `<div class="user-message">${userInput}</div>`;
-        document.getElementById("user-input").value = ""; // Очищаем поле ввода
+            // Добавляем сообщение пользователя в чат
+            messagesContainer.innerHTML += `<div class="user-message">${userInput}</div>`;
+            document.getElementById("user-input").value = ""; // Очищаем поле ввода
 
-        // Отправляем запрос к OpenAI API
-        const response = await fetch('https://api.openai.com/v1/completions', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${apiKey}`,
-            },
-            body: JSON.stringify({
-                model: 'gpt-4',
-                prompt: userInput,
-                max_tokens: 100,
-            }),
-        });
-        const data = await response.json();
+            try {
+                // Отправляем запрос на сервер
+                const response = await fetch('https://chatgpt-api.onrender.com/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message: userInput }),
+                });
 
-        // Добавляем ответ от ChatGPT в чат
-        messagesContainer.innerHTML += `<div class="gpt-message">${data.choices[0].text}</div>`;
-        messagesContainer.scrollTop = messagesContainer.scrollHeight; // Прокручиваем вниз
-    }
-</script>
+                const data = await response.json();
+
+                // Добавляем ответ от ChatGPT в чат
+                if (data.choices && data.choices[0] && data.choices[0].text) {
+                    messagesContainer.innerHTML += `<div class="gpt-message">${data.choices[0].text}</div>`;
+                } else {
+                    messagesContainer.innerHTML += `<div class="gpt-message">Error: No response received.</div>`;
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                messagesContainer.innerHTML += `<div class="gpt-message">Error: Unable to contact server.</div>`;
+            }
+
+            messagesContainer.scrollTop = messagesContainer.scrollHeight; // Прокручиваем вниз
+        }
+    </script>
+
+    <!-- Стили для чата -->
+    <style>
+        #chat-container {
+            position: fixed;
+            bottom: 70px;
+            right: 20px;
+            width: 300px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        #chat-box {
+            height: 200px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        #user-input {
+            width: 75%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 5px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #004080;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #003366;
+        }
+
+        .user-message {
+            background-color: #e0f7fa;
+            padding: 8px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        .gpt-message {
+            background-color: #f1f8e9;
+            padding: 8px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+    </style>
 </body>
 </html>
