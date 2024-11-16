@@ -41,3 +41,65 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+/* Стили для чата */
+#chat-container {
+    position: fixed;
+    bottom: 70px; /* Чуть выше футера */
+    right: 20px;
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Чат всегда будет на переднем плане */
+}
+
+#chat-box {
+    height: 200px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#user-input {
+    width: 75%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+button {
+    padding: 10px;
+    background-color: #004080;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #003366;
+}
+
+/* Сообщения */
+.user-message {
+    background-color: #e0f7fa;
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.gpt-message {
+    background-color: #f1f8e9;
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    text-align: left;
+}
