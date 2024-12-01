@@ -7,15 +7,33 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Шапка будет подгружаться сюда -->
-    <div id="header-container"></div>
+    <!-- Шапка -->
+    <header>
+        <h1>Welcome to Sun Business Books</h1>
+        <p>Your trusted resource for growth and success</p>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="supplementary_materials.html">Supplementary Materials</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </nav>
+    </header>
 
     <!-- Основной контент страницы -->
     <main id="main-content">
-        <!-- Здесь будет подгружаться основной контент -->
+        <h2>Empower Your Journey</h2>
+        <p>At Sun Business Books, we provide insights and inspiration to unlock your full potential. Explore our carefully selected resources and take your next step toward success.</p>
+        <div id="features">
+            <h3>Our Books</h3>
+            <p>Discover our selection of books that help you grow in business, life, and personal development. Each book is carefully crafted to provide actionable insights for real results.</p>
+            
+            <h3>Amazon Pay Integration</h3>
+            <p>With our integrated Amazon Pay system, you can easily purchase any book or material that you find useful. Just click, and it's done — simple and secure.</p>
+        </div>
     </main>
 
-    <!-- Контейнер с чатом -->
+    <!-- Чат ассистент -->
     <div id="chat-container">
         <div id="chat-box">
             <div id="messages"></div>
@@ -24,52 +42,13 @@
         <button onclick="sendMessage()">Send</button>
     </div>
 
-    <!-- Футер будет подгружаться сюда -->
-    <div id="footer-container"></div>
+    <!-- Футер -->
+    <footer>
+        <p>&copy; 2024 Sun Business Books. All Rights Reserved.</p>
+    </footer>
 
-    <!-- JavaScript для динамической подгрузки -->
+    <!-- Скрипт для чата -->
     <script>
-        // Подгрузка шапки
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-container').innerHTML = data;
-                addNavigationListeners(); // Добавляем обработчики на ссылки после загрузки шапки
-            });
-
-        // Подгрузка футера
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-container').innerHTML = data;
-            });
-
-        // Функция для подгрузки основного контента
-        function loadContent(page) {
-            fetch(page)
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('main-content').innerHTML = data;
-                })
-                .catch(error => console.error('Error loading content:', error));
-        }
-
-        // Функция для добавления слушателей событий на ссылки в навигации
-        function addNavigationListeners() {
-            const links = document.querySelectorAll('nav a');
-            links.forEach(link => {
-                link.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const page = this.getAttribute('href').replace('.html', '_content.html');
-                    loadContent(page);
-                });
-            });
-        }
-
-        // Загружаем контент для главной страницы по умолчанию
-        loadContent('home_content.html');
-
-        // Функция для отправки сообщений в чат
         async function sendMessage() {
             const userInput = document.getElementById("user-input").value;
             const messagesContainer = document.getElementById("messages");
@@ -101,8 +80,7 @@
                 messagesContainer.innerHTML += `<div class="gpt-message">Error: Unable to contact server.</div>`;
             }
 
-            // Прокручиваем чат вниз
-            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            messagesContainer.scrollTop = messagesContainer.scrollHeight; // Прокручиваем вниз
         }
     </script>
 </body>
