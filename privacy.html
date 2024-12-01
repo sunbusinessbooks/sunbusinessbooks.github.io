@@ -3,61 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            padding: 0;
-        }
-        header {
-            background-color: #004080;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        h1, h2 {
-            color: #333;
-        }
-        p {
-            margin: 10px 0;
-        }
-    </style>
+    <title>Privacy Policy - Sun Business Books</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <h1>Privacy Policy</h1>
-    </header>
-    <main>
-        <h2>Introduction</h2>
-        <p>Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your personal information.</p>
-        
-        <h2>Information We Collect</h2>
-        <p>We may collect the following types of information:</p>
-        <ul>
-            <li>Personal details (e.g., name, email address).</li>
-            <li>Payment information for transactions via Amazon Pay.</li>
-            <li>Website usage data (e.g., cookies and analytics).</li>
-        </ul>
-        
-        <h2>How We Use Your Information</h2>
-        <p>We use the information to:</p>
-        <ul>
-            <li>Process payments securely.</li>
-            <li>Improve our website and services.</li>
-            <li>Send updates or promotional materials (if opted in).</li>
-        </ul>
+    <div id="header-container"></div> <!-- Контейнер для шапки -->
 
-        <h2>Third-Party Services</h2>
-        <p>We may share your data with third-party services, such as payment processors like Amazon Pay, to complete transactions.</p>
+    <main id="main-content">
+        <h2>Privacy Policy</h2>
+        <p>Your privacy is important to us. This Privacy Policy document contains types of information that are collected and recorded by Sun Business Books and how we use it...</p>
+        <div id="amazonPayButton"></div> <!-- Кнопка Amazon Pay для удобства клиентов -->
 
-        <h2>Your Rights</h2>
-        <p>You have the right to access, update, or delete your personal data. For inquiries, contact us at support@sunbusinessbooks.com.</p>
-
-        <h2>Contact Us</h2>
-        <p>If you have questions or concerns about this Privacy Policy, please contact us:</p>
-        <p>Email: support@sunbusinessbooks.com</p>
+        <!-- Интеграция Amazon Pay -->
+        <script src="https://static-na.payments-amazon.com/OffAmazonPayments/us/js/Widgets.js"></script>
+        <script>
+            OffAmazonPayments.Button("amazonPayButton", "A3PL4XG9Z7V0KH", {
+                type: "PwA",
+                color: "Gold",
+                size: "medium",
+                authorization: function() {
+                    window.location.href = "/checkout";
+                },
+                onError: function(error) {
+                    console.log("Amazon Pay Error:", error.getErrorCode(), error.getErrorMessage());
+                }
+            });
+        </script>
     </main>
+
+    <div id="footer-container"></div> <!-- Контейнер для футера -->
+
+    <!-- JavaScript для подгрузки шапки и футера -->
+    <script>
+        // Подгрузка шапки
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header-container').innerHTML = data)
+            .then(() => {
+                // Добавляем события клика на ссылки
+                const links = document.querySelectorAll('nav a');
+                links.forEach(link => {
+                    link.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const page = this.getAttribute('href').replace('.html', '_content.html');
+                        loadContent(page);
+                    });
+                });
+            });
+
+        // Подгрузка футера
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-container').innerHTML = data);
+    </script>
 </body>
 </html>
