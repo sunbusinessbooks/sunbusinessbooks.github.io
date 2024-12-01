@@ -9,21 +9,23 @@
 <body>
     <!-- Шапка -->
     <header>
-        <h1>Welcome to Sun Business Books</h1>
-        <p>Your trusted resource for growth and success</p>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="supplementary_materials.html">Supplementary Materials</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="privacy.html">Privacy Policy</a></li>
-            </ul>
-        </nav>
+        <div class="header-container">
+            <h1>Welcome to Sun Business Books</h1>
+            <p>Your trusted resource for growth and success</p>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="supplementary_materials.html">Supplementary Materials</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <!-- Основной контент страницы -->
-    <main>
+    <main id="main-content">
         <h2>Empower Your Journey</h2>
         <p>At Sun Business Books, we provide insights and inspiration to unlock your full potential. Explore our carefully selected resources and take your next step toward success.</p>
         <div id="features">
@@ -34,6 +36,15 @@
             <p>With our integrated Amazon Pay system, you can easily purchase any book or material that you find useful. Just click, and it's done — simple and secure.</p>
         </div>
     </main>
+
+    <!-- Чат ассистент -->
+    <div id="chat-container">
+        <div id="chat-box">
+            <div id="messages"></div>
+        </div>
+        <input type="text" id="user-input" placeholder="Enter your message..." />
+        <button onclick="sendMessage()">Send</button>
+    </div>
 
     <!-- Футер -->
     <footer>
