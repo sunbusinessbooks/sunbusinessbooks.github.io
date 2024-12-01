@@ -1,10 +1,17 @@
 /* Основные стили для страницы */
-body {
-    font-family: Arial, sans-serif;
+body, html {
+    height: 100%;
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif;
     background-color: #f9f9f9;
     color: #333;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Обеспечиваем высоту страницы на весь экран */
 }
 
 header {
@@ -34,6 +41,7 @@ nav ul li a:hover {
 }
 
 main {
+    flex: 1; /* Основное пространство страницы будет занимать этот элемент */
     padding: 20px;
 }
 
@@ -45,13 +53,15 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+    margin-top: auto; /* Отправляем футер в самый низ */
 }
 
+/* Стили для медитаций */
 .meditation {
     margin: 20px 0;
 }
 
-/* Стили для кнопок и других элементов */
+/* Стили для кнопок */
 button {
     padding: 10px;
     background-color: #004080;
