@@ -7,32 +7,30 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Шапка и Навигация -->
-    <header>
-        <div class="header-container">
-            <h1>Contact Sun Business Books</h1>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="supplementary_materials.html">Supplementary Materials</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div id="header-container"></div> <!-- Контейнер для шапки -->
 
-    <!-- Основной контент страницы -->
     <main>
-        <h2>Get in Touch</h2>
-        <p>Email: contact@sunbusinessbooks.com</p>
-        <p>Phone: +1 234 567 890</p>
+        <section>
+            <h2>Get In Touch</h2>
+            <p>Email: <a href="mailto:contact@sunbusinessbooks.com">contact@sunbusinessbooks.com</a></p>
+            <p>Phone: +1 234 567 890</p>
+            <p>We would love to hear from you. Feel free to reach out with any questions, feedback, or ideas for collaboration.</p>
+        </section>
     </main>
 
-    <!-- Футер -->
-    <footer>
-        <p>&copy; 2024 Sun Business Books. All Rights Reserved.</p>
-    </footer>
+    <div id="footer-container"></div> <!-- Контейнер для футера -->
+
+    <!-- JavaScript для подгрузки шапки и футера -->
+    <script>
+        // Подгрузка шапки
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header-container').innerHTML = data);
+
+        // Подгрузка футера
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-container').innerHTML = data);
+    </script>
 </body>
 </html>
