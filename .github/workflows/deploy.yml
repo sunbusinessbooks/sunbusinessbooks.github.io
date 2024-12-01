@@ -1,0 +1,32 @@
+name: GitHub Pages Deploy
+
+on:
+  push:
+    branches:
+      - main  # Вы можете заменить на другую ветку, если ваш основной код находится не в main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2  # Забираем весь код из репозитория
+
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'  # Версия Node.js для работы с современными скриптами
+
+    - name: Install dependencies
+      run: npm install  # Установка зависимостей, если есть файл package.json
+
+    - name: Build the website
+      run: npm run build  # Эта команда нужна, если у вас есть команда сборки (можете заменить или убрать, если сборка не нужна)
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3  # Используем готовый экшн для публикации на GitHub Pages
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./public  # Замените на директорию, где находится ваш сайт (например, "public" или "dist")
+
