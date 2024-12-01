@@ -9,16 +9,19 @@
 <body>
     <!-- Шапка -->
     <header>
-        <h1>Welcome to Sun Business Books</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="supplementary_materials.html">Supplementary Materials</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="privacy.html">Privacy Policy</a></li>
-            </ul>
-        </nav>
+        <div class="header-container">
+            <h1>Welcome to Sun Business Books</h1>
+            <p>Your trusted resource for growth and success</p>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="supplementary_materials.html">Supplementary Materials</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <!-- Основной контент страницы -->
@@ -74,15 +77,4 @@
                 if (data.reply) {
                     messagesContainer.innerHTML += `<div class="gpt-message">${data.reply}</div>`;
                 } else {
-                    messagesContainer.innerHTML += `<div class="gpt-message">Error: No response received.</div>`;
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                messagesContainer.innerHTML += `<div class="gpt-message">Error: Unable to contact server.</div>`;
-            }
-
-            messagesContainer.scrollTop = messagesContainer.scrollHeight; // Прокручиваем вниз
-        }
-    </script>
-</body>
-</html>
+                    messagesContainer.inne
