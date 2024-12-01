@@ -7,42 +7,38 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div id="header-container"></div> <!-- Контейнер для шапки -->
+    <div id="header-container"></div>
 
     <main>
         <section>
             <h2>Supplementary Materials</h2>
             <p>Explore our supplementary materials to enhance your learning experience.</p>
-
-            <h3>Meditations</h3>
+            <!-- Медитации -->
             <div class="meditation">
                 <h4>Meditation with Female Voice</h4>
-                <p>Designed to help you relax, find awareness, and connect deeply with yourself.</p>
                 <a href="https://github.com/sunbusinessbooks/sunbusinessbooks.github.io/raw/main/assets/audio/MeditationGirl.mp3" download>Download Meditation</a> | 
                 <a href="https://github.com/sunbusinessbooks/sunbusinessbooks.github.io/raw/main/assets/audio/MeditationGirl.mp3">Listen Online</a>
             </div>
             <div class="meditation">
                 <h4>Meditation with Male Voice</h4>
-                <p>Developed to create a calm space to explore thoughts and emotions, this meditation is perfect for relieving tension and re-energizing.</p>
                 <a href="https://github.com/sunbusinessbooks/sunbusinessbooks.github.io/raw/main/assets/audio/MeditationMen.mp3" download>Download Meditation</a> | 
                 <a href="https://github.com/sunbusinessbooks/sunbusinessbooks.github.io/raw/main/assets/audio/MeditationMen.mp3">Listen Online</a>
             </div>
         </section>
     </main>
 
-    <div id="footer-container"></div> <!-- Контейнер для футера -->
+    <div id="footer-container"></div>
 
-    <!-- JavaScript для подгрузки шапки и футера -->
     <script>
-        // Подгрузка шапки
         fetch('header.html')
             .then(response => response.text())
-            .then(data => document.getElementById('header-container').innerHTML = data);
+            .then(data => document.getElementById('header-container').innerHTML = data)
+            .catch(error => console.error('Error loading header:', error));
 
-        // Подгрузка футера
         fetch('footer.html')
             .then(response => response.text())
-            .then(data => document.getElementById('footer-container').innerHTML = data);
+            .then(data => document.getElementById('footer-container').innerHTML = data)
+            .catch(error => console.error('Error loading footer:', error));
     </script>
 </body>
 </html>
