@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div id="header-container"></div> <!-- Контейнер для шапки -->
+    <!-- Шапка будет подгружаться сюда -->
+    <div id="header-container"></div>
 
+    <!-- Основной контент страницы -->
     <main id="main-content">
         <h2>Privacy Policy</h2>
         <p>Your privacy is important to us. This Privacy Policy document contains types of information that are collected and recorded by Sun Business Books and how we use it...</p>
@@ -31,22 +33,25 @@
         </script>
     </main>
 
-    <div id="footer-container"></div> <!-- Контейнер для футера -->
+    <!-- Футер будет подгружаться сюда -->
+    <div id="footer-container"></div>
 
-    <!-- JavaScript для подгрузки шапки и футера -->
+    <!-- JavaScript для динамической подгрузки -->
     <script>
         // Подгрузка шапки
         fetch('header.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('header-container').innerHTML = data;
-                addNavigationListeners();
+                addNavigationListeners(); // Добавляем обработчики на ссылки после загрузки шапки
             });
 
         // Подгрузка футера
         fetch('footer.html')
             .then(response => response.text())
-            .then(data => document.getElementById('footer-container').innerHTML = data);
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            });
 
         // Функция для подгрузки основного контента
         function loadContent(page) {
@@ -58,7 +63,7 @@
                 .catch(error => console.error('Error loading content:', error));
         }
 
-        // Добавляем слушатели кликов на ссылки в навигации после подгрузки шапки
+        // Функция для добавления слушателей событий на ссылки в навигации
         function addNavigationListeners() {
             const links = document.querySelectorAll('nav a');
             links.forEach(link => {
@@ -70,7 +75,8 @@
             });
         }
 
-        // Скрипт для чата — аналогичный `index.html`
+        // Загружаем контент для страницы по умолчанию
+        loadContent('privacy_content.html');
     </script>
 </body>
 </html>
