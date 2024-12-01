@@ -3,35 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sun Business Books</title>
+    <title>Home - Sun Business Books</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div id="header-container"></div> <!-- Контейнер для шапки -->
+    <div id="header-container"></div>
 
     <main>
         <section>
             <h2>Welcome to Sun Business Books</h2>
             <p>Your trusted resource for growth and success. Explore our carefully selected resources and take your next step toward success.</p>
-
-            <h3>Our Books</h3>
-            <p>Discover our selection of books that help you grow in business, life, and personal development. Each book is carefully crafted to provide actionable insights for real results.</p>
         </section>
     </main>
 
-    <div id="footer-container"></div> <!-- Контейнер для футера -->
+    <div id="footer-container"></div>
 
-    <!-- JavaScript для подгрузки шапки и футера -->
     <script>
-        // Подгрузка шапки
         fetch('header.html')
             .then(response => response.text())
-            .then(data => document.getElementById('header-container').innerHTML = data);
+            .then(data => document.getElementById('header-container').innerHTML = data)
+            .catch(error => console.error('Error loading header:', error));
 
-        // Подгрузка футера
         fetch('footer.html')
             .then(response => response.text())
-            .then(data => document.getElementById('footer-container').innerHTML = data);
+            .then(data => document.getElementById('footer-container').innerHTML = data)
+            .catch(error => console.error('Error loading footer:', error));
     </script>
 </body>
 </html>
