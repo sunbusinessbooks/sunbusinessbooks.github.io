@@ -7,76 +7,35 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Шапка будет подгружаться сюда -->
-    <div id="header-container"></div>
+    <!-- Шапка -->
+    <header>
+        <h1>Privacy Policy</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="supplementary_materials.html">Supplementary Materials</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
     <!-- Основной контент страницы -->
-    <main id="main-content">
-        <h2>Privacy Policy</h2>
-        <p>Your privacy is important to us. This Privacy Policy document contains types of information that are collected and recorded by Sun Business Books and how we use it...</p>
-        <div id="amazonPayButton"></div> <!-- Кнопка Amazon Pay -->
+    <main>
+        <h2>Our Commitment to Your Privacy</h2>
+        <p>At Sun Business Books, we are committed to protecting your privacy. This Privacy Policy outlines the types of information we collect and how we use it. Please feel free to contact us with any questions regarding our privacy practices.</p>
 
-        <!-- Интеграция Amazon Pay -->
-        <script src="https://static-na.payments-amazon.com/OffAmazonPayments/us/js/Widgets.js"></script>
-        <script>
-            OffAmazonPayments.Button("amazonPayButton", "A3PL4XG9Z7V0KH", {
-                type: "PwA",
-                color: "Gold",
-                size: "medium",
-                authorization: function() {
-                    window.location.href = "/checkout";
-                },
-                onError: function(error) {
-                    console.log("Amazon Pay Error:", error.getErrorCode(), error.getErrorMessage());
-                }
-            });
-        </script>
+        <h3>Information We Collect</h3>
+        <p>We may collect personal information, such as your name and email address, when you subscribe to our newsletter or make a purchase. This information is used solely for communication purposes and to provide you with our services.</p>
+
+        <h3>How We Use Your Information</h3>
+        <p>Your information is used to personalize your experience, improve our website, and respond to customer inquiries. We never sell your information to third parties.</p>
+
+        <h3>Contact Us</h3>
+        <p>If you have any questions or concerns about our privacy practices, please contact us at: <strong>privacy@sunbusinessbooks.com</strong>.</p>
     </main>
 
-    <!-- Футер будет подгружаться сюда -->
-    <div id="footer-container"></div>
-
-    <!-- JavaScript для динамической подгрузки -->
-    <script>
-        // Подгрузка шапки
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-container').innerHTML = data;
-                addNavigationListeners(); // Добавляем обработчики на ссылки после загрузки шапки
-            });
-
-        // Подгрузка футера
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-container').innerHTML = data;
-            });
-
-        // Функция для подгрузки основного контента
-        function loadContent(page) {
-            fetch(page)
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('main-content').innerHTML = data;
-                })
-                .catch(error => console.error('Error loading content:', error));
-        }
-
-        // Функция для добавления слушателей событий на ссылки в навигации
-        function addNavigationListeners() {
-            const links = document.querySelectorAll('nav a');
-            links.forEach(link => {
-                link.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const page = this.getAttribute('href').replace('.html', '_content.html');
-                    loadContent(page);
-                });
-            });
-        }
-
-        // Загружаем контент для страницы по умолчанию
-        loadContent('privacy_content.html');
-    </script>
+    <!-- Футер -->
+    <footer>
+        <p>&copy; 2024 Sun Business Books. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
