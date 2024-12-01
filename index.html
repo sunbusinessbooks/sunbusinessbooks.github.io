@@ -7,12 +7,15 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div id="header-container"></div> <!-- Контейнер для шапки -->
+    <!-- Шапка будет подгружаться сюда -->
+    <div id="header-container"></div>
 
+    <!-- Основной контент страницы -->
     <main id="main-content">
         <!-- Здесь будет подгружаться основной контент -->
     </main>
 
+    <!-- Контейнер с чатом -->
     <div id="chat-container">
         <div id="chat-box">
             <div id="messages"></div>
@@ -21,22 +24,25 @@
         <button onclick="sendMessage()">Send</button>
     </div>
 
-    <div id="footer-container"></div> <!-- Контейнер для футера -->
+    <!-- Футер будет подгружаться сюда -->
+    <div id="footer-container"></div>
 
-    <!-- JavaScript для подгрузки шапки и футера -->
+    <!-- JavaScript для динамической подгрузки -->
     <script>
         // Подгрузка шапки
         fetch('header.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('header-container').innerHTML = data;
-                addNavigationListeners();
+                addNavigationListeners(); // Добавляем обработчики на ссылки после загрузки шапки
             });
 
         // Подгрузка футера
         fetch('footer.html')
             .then(response => response.text())
-            .then(data => document.getElementById('footer-container').innerHTML = data);
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            });
 
         // Функция для подгрузки основного контента
         function loadContent(page) {
@@ -48,9 +54,56 @@
                 .catch(error => console.error('Error loading content:', error));
         }
 
-        // Добавляем слушатели кликов на ссылки в навигации после подгрузки шапки
+        // Функция для добавления слушателей событий на ссылки в навигации
         function addNavigationListeners() {
             const links = document.querySelectorAll('nav a');
             links.forEach(link => {
                 link.addEventListener('click', function (e) {
-                 
+                    e.preventDefault();
+                    const page = this.getAttribute('href').replace('.html', '_content.html');
+                    loadContent(page);
+                });
+            });
+        }
+
+        // Загружаем контент для главной страницы по умолчанию
+        loadContent('home_content.html');
+
+        // Функция для отправки сообщений в чат
+        async function sendMessage() {
+            const userInput = document.getElementById("user-input").value;
+            const messagesContainer = document.getElementById("messages");
+
+            // Добавляем сообщение пользователя в чат
+            messagesContainer.innerHTML += `<div class="user-message">${userInput}</div>`;
+            document.getElementById("user-input").value = ""; // Очищаем поле ввода
+
+            try {
+                // Отправляем запрос на сервер
+                const response = await fetch('https://sunbusinessbooks-server.onrender.com/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message: userInput }),
+                });
+
+                const data = await response.json();
+
+                // Добавляем ответ от ChatGPT в чат
+                if (data.reply) {
+                    messagesContainer.innerHTML += `<div class="gpt-message">${data.reply}</div>`;
+                } else {
+                    messagesContainer.innerHTML += `<div class="gpt-message">Error: No response received.</div>`;
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                messagesContainer.innerHTML += `<div class="gpt-message">Error: Unable to contact server.</div>`;
+            }
+
+            // Прокручиваем чат вниз
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+    </script>
+</body>
+</html>
