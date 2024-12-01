@@ -1,60 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Sun Business Books</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-    <div id="header-container"></div> <!-- Контейнер для шапки -->
+<h2>Privacy Policy</h2>
+<p>Your privacy is important to us. This Privacy Policy document contains types of information that are collected and recorded by Sun Business Books and how we use it...</p>
+<div id="amazonPayButton"></div> <!-- Кнопка Amazon Pay -->
 
-    <main id="main-content">
-        <h2>Privacy Policy</h2>
-        <p>Your privacy is important to us. This Privacy Policy document contains types of information that are collected and recorded by Sun Business Books and how we use it...</p>
-        <div id="amazonPayButton"></div> <!-- Кнопка Amazon Pay для удобства клиентов -->
-
-        <!-- Интеграция Amazon Pay -->
-        <script src="https://static-na.payments-amazon.com/OffAmazonPayments/us/js/Widgets.js"></script>
-        <script>
-            OffAmazonPayments.Button("amazonPayButton", "A3PL4XG9Z7V0KH", {
-                type: "PwA",
-                color: "Gold",
-                size: "medium",
-                authorization: function() {
-                    window.location.href = "/checkout";
-                },
-                onError: function(error) {
-                    console.log("Amazon Pay Error:", error.getErrorCode(), error.getErrorMessage());
-                }
-            });
-        </script>
-    </main>
-
-    <div id="footer-container"></div> <!-- Контейнер для футера -->
-
-    <!-- JavaScript для подгрузки шапки и футера -->
-    <script>
-        // Подгрузка шапки
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('header-container').innerHTML = data)
-            .then(() => {
-                // Добавляем события клика на ссылки
-                const links = document.querySelectorAll('nav a');
-                links.forEach(link => {
-                    link.addEventListener('click', function (e) {
-                        e.preventDefault();
-                        const page = this.getAttribute('href').replace('.html', '_content.html');
-                        loadContent(page);
-                    });
-                });
-            });
-
-        // Подгрузка футера
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('footer-container').innerHTML = data);
-    </script>
-</body>
-</html>
+<!-- Интеграция Amazon Pay -->
+<script src="https://static-na.payments-amazon.com/OffAmazonPayments/us/js/Widgets.js"></script>
+<script>
+    OffAmazonPayments.Button("amazonPayButton", "A3PL4XG9Z7V0KH", {
+        type: "PwA",
+        color: "Gold",
+        size: "medium",
+        authorization: function() {
+            window.location.href = "/checkout";
+        },
+        onError: function(error) {
+            console.log("Amazon Pay Error:", error.getErrorCode(), error.getErrorMessage());
+        }
+    });
+</script>
