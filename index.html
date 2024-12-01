@@ -3,28 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sun Business Books - One Page</title>
+    <title>Sun Business Books - Empowering Success</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Основные стили, чтобы сделать страницу аккуратной и современной */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #004080;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .meditation {
+            margin: 20px 0;
+        }
+
+        /* Стили для чата */
+        #chat-container {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            width: 300px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        #chat-box {
+            height: 200px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        #user-input {
+            width: 75%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 5px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #004080;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #003366;
+        }
+    </style>
 </head>
 <body>
-    <!-- Шапка сайта -->
+    <!-- Шапка и Навигация -->
     <header>
-        <div class="header-container">
-            <h1>Sun Business Books</h1>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#supplementary">Supplementary Materials</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#privacy">Privacy Policy</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>Sun Business Books</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#supplementary">Supplementary Materials</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#privacy">Privacy Policy</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Основной контент страницы -->
-    <main id="main-content">
+    <!-- Основной контент -->
+    <main>
         <!-- Секция Home -->
         <section id="home">
             <h2>Welcome to Sun Business Books</h2>
@@ -34,7 +127,6 @@
         <!-- Секция Supplementary Materials -->
         <section id="supplementary">
             <h2>Supplementary Materials</h2>
-            <p>Explore our supplementary materials to enhance your learning experience.</p>
             <div class="meditation">
                 <h4>Meditation with Female Voice</h4>
                 <p>Designed to help you relax, find awareness, and connect deeply with yourself.</p>
@@ -83,9 +175,7 @@
 
     <!-- Футер -->
     <footer>
-        <div class="footer-container">
-            <p>&copy; 2024 Sun Business Books. All Rights Reserved.</p>
-        </div>
+        <p>&copy; 2024 Sun Business Books. All Rights Reserved.</p>
     </footer>
 
     <!-- Скрипты -->
