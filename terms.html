@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Sun Business Books</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="header-container"></div> <!-- Контейнер для шапки -->
+
+    <main>
+        <section>
+            <h2>Terms of Service</h2>
+            <p>Welcome to Sun Business Books. These terms outline the rules and regulations for the use of our website and services.</p>
+        </section>
+    </main>
+
+    <div id="footer-container"></div> <!-- Контейнер для футера -->
+
+    <!-- JavaScript для подгрузки шапки и футера -->
+    <script>
+        // Подгрузка шапки
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header-container').innerHTML = data);
+
+        // Подгрузка футера
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-container').innerHTML = data);
+    </script>
+</body>
+</html>
