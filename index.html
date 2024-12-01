@@ -7,85 +7,29 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Шапка -->
+    <!-- Шапка и Навигация -->
     <header>
-        <div class="header-container">
-            <h1>Welcome to Sun Business Books</h1>
-            <p>Your trusted resource for growth and success</p>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="supplementary_materials.html">Supplementary Materials</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>Welcome to Sun Business Books</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="supplementary_materials.html">Supplementary Materials</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+            </ul>
+        </nav>
     </header>
 
     <!-- Основной контент страницы -->
-    <main id="main-content">
+    <main>
         <h2>Empower Your Journey</h2>
         <p>At Sun Business Books, we provide insights and inspiration to unlock your full potential. Explore our carefully selected resources and take your next step toward success.</p>
-        <div id="features">
-            <h3>Our Books</h3>
-            <p>Discover our selection of books that help you grow in business, life, and personal development. Each book is carefully crafted to provide actionable insights for real results.</p>
-            
-            <h3>Amazon Pay Integration</h3>
-            <p>With our integrated Amazon Pay system, you can easily purchase any book or material that you find useful. Just click, and it's done — simple and secure.</p>
-        </div>
     </main>
-
-    <!-- Чат ассистент -->
-    <div id="chat-container">
-        <div id="chat-box">
-            <div id="messages"></div>
-        </div>
-        <input type="text" id="user-input" placeholder="Enter your message..." />
-        <button onclick="sendMessage()">Send</button>
-    </div>
 
     <!-- Футер -->
     <footer>
         <p>&copy; 2024 Sun Business Books. All Rights Reserved.</p>
     </footer>
-
-    <!-- Скрипт для чата -->
-    <script>
-        async function sendMessage() {
-            const userInput = document.getElementById("user-input").value;
-            const messagesContainer = document.getElementById("messages");
-
-            // Добавляем сообщение пользователя в чат
-            messagesContainer.innerHTML += `<div class="user-message">${userInput}</div>`;
-            document.getElementById("user-input").value = ""; // Очищаем поле ввода
-
-            try {
-                // Отправляем запрос на сервер
-                const response = await fetch('https://sunbusinessbooks-server.onrender.com/chat', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ message: userInput }),
-                });
-
-                const data = await response.json();
-
-                // Добавляем ответ от ChatGPT в чат
-                if (data.reply) {
-                    messagesContainer.innerHTML += `<div class="gpt-message">${data.reply}</div>`;
-                } else {
-                    messagesContainer.innerHTML += `<div class="gpt-message">Error: No response received.</div>`;
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                messagesContainer.innerHTML += `<div class="gpt-message">Error: Unable to contact server.</div>`;
-            }
-
-            messagesContainer.scrollTop = messagesContainer.scrollHeight; // Прокручиваем вниз
-        }
-    </script>
 </body>
 </html>
