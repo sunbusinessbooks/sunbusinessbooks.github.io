@@ -1,55 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sun Business Books - Supplementary Materials</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-    <div id="header-container"></div> <!-- Контейнер для шапки -->
-
-    <main>
-        <section id="meditations">
-            <h3>Meditations</h3>
-            <div class="meditation">
-                <h4>Meditation for Women</h4>
-                <p>Designed to help you relax, find awareness, and connect deeply with yourself. Find a quiet spot and immerse yourself in this meditation.</p>
-                <a href="https://sunbusinessbooks.github.io/assets/audio/meditation_girl.mp3" download>Download Meditation</a> | <a href="https://sunbusinessbooks.github.io/assets/audio/meditation_girl.mp3">Listen Online</a>
-            </div>
-            <div class="meditation">
-                <h4>Meditation for Men</h4>
-                <p>Developed to create a calm space to explore thoughts and emotions, this meditation is perfect for relieving tension and re-energizing.</p>
-                <a href="https://sunbusinessbooks.github.io/assets/audio/meditation_men.mp3" download>Download Meditation</a> | <a href="https://sunbusinessbooks.github.io/assets/audio/meditation_men.mp3">Listen Online</a>
-            </div>
-        </section>
-
-        <section id="exercises">
-            <h3>Coming Soon: Exercises</h3>
-            <div class="exercise">
-                <h4>"5 Whys" by Sakichi Toyoda</h4>
-                <p>An insightful exercise to analyze and discover the root causes of your actions or obstacles. Use the "5 Whys" approach to reach new understanding.</p>
-            </div>
-            <div class="exercise">
-                <h4>"Here and Now" Awareness Exercise</h4>
-                <p>A practice that includes consciously observing your surroundings and tapping different parts of your body to bring yourself into the present moment.</p>
-            </div>
-        </section>
-    </main>
-
-    <div id="footer-container"></div> <!-- Контейнер для футера -->
-
-    <!-- JavaScript для подгрузки шапки и футера -->
-    <script>
-        // Подгрузка шапки
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('header-container').innerHTML = data);
-
-        // Подгрузка футера
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('footer-container').innerHTML = data);
-    </script>
-</body>
-</html>
+<section id="supplementary">
+    <h2>Supplementary Materials</h2>
+    <section id="meditations">
+        <h3>Meditations</h3>
+        <div class="meditation">
+            <h4>Meditation with Female Voice</h4>
+            <p>Designed to help you relax, find awareness, and connect deeply with yourself. Find a quiet spot and immerse yourself in this meditation.</p>
+            <a href="https://sunbusinessbooks.github.io/assets/audio/meditation_girl.mp3" download>Download Meditation</a> | <a href="https://sunbusinessbooks.github.io/assets/audio/meditation_girl.mp3">Listen Online</a>
+        </div>
+        <div class="meditation">
+            <h4>Meditation for Men</h4>
+            <p>Developed to create a calm space to explore thoughts and emotions, this meditation is perfect for relieving tension and re-energizing.</p>
+            <a href="https://sunbusinessbooks.github.io/assets/audio/meditation_men.mp3" download>Download Meditation</a> | <a href="https://sunbusinessbooks.github.io/assets/audio/meditation_men.mp3">Listen Online</a>
+        </div>
+    </section>
+    
+    <section id="exercises">
+        <h3>Coming Soon: Exercises</h3>
+        <div class="exercise">
+            <h4>"5 Whys" by Sakichi Toyoda</h4>
+            <p>An insightful exercise to analyze and discover the root causes of your actions or obstacles. Use the "5 Whys" approach to reach new understanding.</p>
+        </div>
+        <div class="exercise">
+            <h4>"Here and Now" Awareness Exercise</h4>
+            <p>A practice that includes consciously observing your surroundings and tapping different parts of your body to bring yourself into the present moment.</p>
+        </div>
+    </section>
+</section>
