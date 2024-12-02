@@ -75,18 +75,17 @@ button:hover {
     background-color: #003366;
 }
 
-#powered-by {
+powered-by {
     margin-top: 10px;
     text-align: center;
 }
-
-#powered-by img {
-    max-width: 150px; /* Задаем размер логотипа */
-    opacity: 0.8; /* Легкая прозрачность для более мягкого вида */
+powered-by img {
+    width: 100px; /* Ширина 100 пикселей */
+    height: 100px; /* Высота 100 пикселей */
+    opacity: 0.8; 
     transition: opacity 0.3s ease;
 }
 
-#powered-by img:hover {
+powered-by img:hover {
     opacity: 1; /* При наведении логотип становится полностью видимым */
 }
-
