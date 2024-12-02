@@ -77,7 +77,7 @@ button:hover {
 
 #powered-by {
     margin-top: 10px;
-    text-align: center;
+    text-align: left;
 
 #powered-by img {
     width: 70px; /* Ширина 100 пикселей */
