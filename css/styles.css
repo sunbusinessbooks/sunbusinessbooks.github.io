@@ -80,8 +80,8 @@ button:hover {
     text-align: center;
 
 #powered-by img {
-    width: 50px; /* Ширина 100 пикселей */
-    height: 50px; /* Высота 100 пикселей */
+    width: 70px; /* Ширина 100 пикселей */
+    height: 70px; /* Высота 100 пикселей */
     opacity: 0.8; 
     transition: opacity 0.3s ease;
 }
