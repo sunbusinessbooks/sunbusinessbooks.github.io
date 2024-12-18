@@ -11,7 +11,7 @@ body, html {
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Обеспечиваем высоту страницы на весь экран */
+    min-height: 100vh;
 }
 
 header {
@@ -41,7 +41,7 @@ nav ul li a:hover {
 }
 
 main {
-    flex: 1; /* Основное пространство страницы будет занимать этот элемент */
+    flex: 1;
     padding: 20px;
 }
 
@@ -53,7 +53,7 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
-    margin-top: auto; /* Отправляем футер в самый низ */
+    margin-top: auto;
 }
 
 /* Стили для медитаций */
@@ -75,18 +75,47 @@ button:hover {
     background-color: #003366;
 }
 
+/* Блок логотипа в футере */
 #powered-by {
     margin-top: 10px;
     text-align: center;
+}
 
 #powered-by img {
-    width: 70px; /* Ширина 100 пикселей */
-    height: 70px; /* Высота 100 пикселей */
+    width: 70px;
+    height: 70px;
     opacity: 0.7; 
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 #powered-by img:hover {
-    opacity: 1; /* При наведении логотип становится полностью видимым */
-    transform: scale(1.1); /* Немного увеличивается размер для проверки */
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Стили для встраиваемых видео */
+iframe {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+    border: none;
+}
+
+/* Контейнер для видео */
+.video-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Стили для каждого видео */
+.video-item {
+    text-align: center;
+}
+
+.video-item h4 {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #004080;
+    text-transform: uppercase;
 }
