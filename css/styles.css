@@ -46,8 +46,10 @@ body {
   transition: color 0.3s ease;
 }
 
-.nav-menu li a:hover {
+.nav-menu li a:hover,
+.nav-menu li a.active {
   color: #444;
+  font-weight: bold;
 }
 
 /* Tagline */
@@ -81,6 +83,7 @@ body {
 .cta-button {
   display: inline-block;
   margin-top: 15px;
+  margin-right: 10px;
   padding: 10px 20px;
   background-color: #f8b400;
   color: white;
@@ -130,6 +133,7 @@ body {
   background-color: #fff;
   transition: transform 0.3s ease;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  text-align: center;
 }
 
 .book-card:hover {
@@ -140,6 +144,7 @@ body {
   width: 100%;
   height: auto;
   display: block;
+  max-height: 400px;
 }
 
 .book-card .card-content {
@@ -200,20 +205,24 @@ footer {
 
 .books-page .book-card {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   background-color: #fff;
   border-radius: 6px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   margin-bottom: 40px;
+  align-items: center;
 }
 
 .books-page .book-card img {
-  max-width: 200px;
+  max-width: 300px;
+  width: 100%;
   height: auto;
 }
 
 .books-page .book-content {
+  flex: 1;
   padding: 20px;
 }
 
@@ -227,4 +236,31 @@ footer {
   font-size: 0.95rem;
   color: #444;
   line-height: 1.5;
+}
+
+.books-page .book-buttons {
+  margin-top: 15px;
+}
+
+.books-page .book-buttons .cta-button {
+  margin-right: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .books-page .book-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .books-page .book-content {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .nav-menu {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
