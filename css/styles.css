@@ -168,7 +168,8 @@ body {
   margin-top: 10px;
 }
 
-.book-buttons a {
+.book-buttons a,
+.book-buttons audio {
   display: inline-block;
   margin: 5px;
   padding: 8px 16px;
@@ -183,6 +184,13 @@ body {
 
 .book-buttons a:hover {
   background-color: #c98c00;
+}
+
+.book-buttons audio {
+  background-color: transparent;
+  padding: 0;
+  margin-top: 10px;
+  width: 100%;
 }
 
 /* Footer */
