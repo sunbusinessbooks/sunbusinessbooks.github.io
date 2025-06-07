@@ -4,76 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sun Business Books</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-    }
-    header {
-      background-color: #f4b400;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-    main {
-      padding: 20px;
-    }
-    .section {
-      margin-bottom: 40px;
-    }
-    h1, h2 {
-      color: #333;
-    }
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      max-width: 100%;
-      background: #000;
-      margin-top: 20px;
-    }
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-    footer {
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-    }
-    .cta-button {
-      display: inline-block;
-      padding: 12px 24px;
-      background-color: #f4b400;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      margin-top: 20px;
-    }
-    .quote {
-      font-style: italic;
-      color: #666;
-      margin-top: 10px;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <h1>Welcome to Sun Business Books</h1>
-    <p>Where Light Becomes Business ✨</p>
+    <nav class="navbar">
+      <h1 class="logo">Sun Business Books</h1>
+      <ul class="nav-menu">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/books.html">Books</a></li>
+        <li><a href="/videos.html">Videos</a></li>
+        <li><a href="/supplementary_materials.html">Materials</a></li>
+        <li><a href="https://www.amazon.com/author/bauyrzhan-khamzin" target="_blank">Store</a></li>
+        <li><a href="#mission">Mission</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <p class="tagline">Where Light Becomes Business ✨</p>
   </header>
+
   <main>
     <section class="section">
       <h2>🌞 About Us</h2>
-      <p>Sun Business Books is a creative space where inspiration, AI, and publishing meet. We believe in empowering mindful creators through books, tools, and content designed for clarity, growth, and light.</p>
+      <p>Sun Business Books was born from a deep desire to merge soul and strategy. Founded by a visionary author, athlete, and creator — Bauyrzhan Khamzin — our platform is a sanctuary for those seeking inspiration, growth, and clarity in a noisy world.</p>
+      <p>We believe that light can be structured, dreams can be published, and conscious creators can thrive with the right support. Our story is one of small steps, mindful action, and the beautiful interplay between technology, heart, and intention.</p>
     </section>
 
     <section class="section">
@@ -94,7 +49,7 @@
     <section class="section">
       <h2>🎥 Watch Our Intro Video</h2>
       <div class="video-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/tuAprODsuCI?si=DYetfbN8oopCY2pk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/tuAprODsuCI?autoplay=1&mute=1&loop=1&playlist=tuAprODsuCI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
     </section>
 
@@ -104,14 +59,25 @@
       <p class="quote">“A unique blend of wisdom and modern tools — a must-read.” – Entrepreneur & Coach</p>
     </section>
 
-    <section class="section">
+    <section class="section" id="mission">
       <h2>🌟 Our Mission</h2>
       <p>To awaken light in every creator by merging soulful expression with powerful tools. Our goal is to help you not just learn — but transform and shine.</p>
+    </section>
+
+    <section class="section">
+      <h2>🌱 Our Story</h2>
+      <p>From humble beginnings in Kazakhstan to a global vision, Sun Business Books is built on the belief that even the smallest light can spark transformation. Our founder’s journey — filled with deep reflection, spiritual practice, and modern strategy — is woven into every book, every message, and every intention we share. We’re not just publishers — we’re a movement of mindful creators.</p>
     </section>
   </main>
 
   <footer>
     <p>&copy; 2025 Sun Business Books. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="https://instagram.com/SunBusinessBooks" target="_blank">Instagram</a></li>
+      <li><a href="https://t.me/sun_leaders" target="_blank">Telegram</a></li>
+    </ul>
   </footer>
 </body>
 </html>
