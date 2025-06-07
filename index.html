@@ -1,62 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Sun Business Books</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sun Business Books</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+    header {
+      background-color: #f4b400;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    main {
+      padding: 20px;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      background: #000;
+      margin-top: 20px;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+    .cta-button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #f4b400;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      margin-top: 20px;
+    }
+    .quote {
+      font-style: italic;
+      color: #666;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
-    <!-- Шапка и Навигация -->
-    <header>
-        <div class="header-container">
-            <h1>Sun Business Books</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="supplementary_materials.html">Supplementary Materials</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="books.html">Books</a></li>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <header>
+    <h1>Welcome to Sun Business Books</h1>
+    <p>Where Light Becomes Business ✨</p>
+  </header>
+  <main>
+    <section class="section">
+      <h2>🌞 About Us</h2>
+      <p>Sun Business Books is a creative space where inspiration, AI, and publishing meet. We believe in empowering mindful creators through books, tools, and content designed for clarity, growth, and light.</p>
+    </section>
 
-    <!-- Основной контент -->
-    <main>
-        <section>
-            <h2>Welcome to Sun Business Books</h2>
-            <p>Your trusted resource for growth and success. Explore our carefully selected resources and take your next step toward success.</p>
-        </section>
+    <section class="section">
+      <h2>📚 Explore Our Books</h2>
+      <p>Discover a growing collection of books that blend self-development, creativity, and modern insights. Each book is created with heart and intention — now available on Amazon.</p>
+      <a class="cta-button" href="https://www.amazon.com/author/bauyrzhan-khamzin" target="_blank">View Books on Amazon</a>
+    </section>
 
-        <!-- Amazon Pay Button -->
-        <div id="amazonPayButton"></div>
-    </main>
+    <section class="section">
+      <h2>💡 What We Offer</h2>
+      <ul>
+        <li>Guided books with AI and QR codes</li>
+        <li>Printable coloring pages and mindful tools</li>
+        <li>Video meditations and creative support</li>
+      </ul>
+    </section>
 
-    <!-- Футер -->
+    <section class="section">
+      <h2>🎥 Watch Our Intro Video</h2>
+      <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/h8JIvp-GSas?si=YFag7SuDHj9UQUSh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </section>
 
-<footer>
-    <p>&copy; 2024 Sun Business Books. All Rights Reserved.</p>
-    <div id="powered-by">
-        <img src="assets/images/powered-by-gpt.png" alt="Powered by GPT">
-    </div>
-</footer>
-    
-    <!-- Скрипт для Amazon Pay -->
-    <script src="https://static-na.payments-amazon.com/OffAmazonPayments/us/js/Widgets.js"></script>
-    <script>
-        OffAmazonPayments.Button("amazonPayButton", "A3PL4XG9Z7V0KH", {
-            type: "PwA",
-            color: "Gold",
-            size: "medium",
-            authorization: function() {
-                window.location.href = "/checkout";
-            },
-            onError: function(error) {
-                console.log("Amazon Pay Error:", error.getErrorCode(), error.getErrorMessage());
-            }
-        });
-    </script>
+    <section class="section">
+      <h2>💬 Testimonials</h2>
+      <p class="quote">“These books bring light and clarity into my life.” – A Happy Reader</p>
+      <p class="quote">“A unique blend of wisdom and modern tools — a must-read.” – Entrepreneur & Coach</p>
+    </section>
+
+    <section class="section">
+      <h2>🌟 Our Mission</h2>
+      <p>To awaken light in every creator by merging soulful expression with powerful tools. Our goal is to help you not just learn — but transform and shine.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Sun Business Books. All rights reserved.</p>
+  </footer>
 </body>
 </html>
