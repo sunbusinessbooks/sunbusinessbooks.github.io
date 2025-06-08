@@ -1,84 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Supplementary Materials - Sun Business Books</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Supplementary Materials | Sun Business Books</title>
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-    <!-- Шапка и Навигация -->
-    <header>
-        <div class="header-container">
-            <h1>Sun Business Books</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="supplementary_materials.html">Supplementary Materials</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="books.html">Books</a></li>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <!-- Основной контент -->
-    <main>
-        <section>
-            <h2>Supplementary Materials</h2>
-            <div class="meditation">
-                <h4>Meditation with Female Voice</h4>
-                <p>Designed to help you relax, find awareness, and connect deeply with yourself.</p>
-                <a href="assets/audio/MeditationGirl.mp3" download>Download Meditation</a> | 
-                <a href="assets/audio/MeditationGirl.mp3">Listen Online</a>
-            </div>
-            <div class="meditation">
-                <h4>Meditation with Male Voice</h4>
-                <p>Developed to create a calm space to explore thoughts and emotions, this meditation is perfect for relieving tension and re-energizing.</p>
-                <a href="assets/audio/MeditationMen.mp3" download>Download Meditation</a> | 
-                <a href="assets/audio/MeditationMen.mp3">Listen Online</a>
-            </div>
-        </section>
-        <div class="video-container">
-            <div class="video-item">
-                <h4>Solving complex SUDOKU 1</h4>
-                <iframe src="https://www.youtube.com/embed/g2HL6C_M2Dw" title="YouTube video player" allowfullscreen></iframe>
-            </div>
-            <div class="video-item">
-                <h4>Solving complex SUDOKU 2</h4>
-                <iframe src="https://www.youtube.com/embed/kbgJJaJc1tA" title="YouTube video player" allowfullscreen></iframe>
-            </div>
-            <div class="video-item">
-                <h4>Solving complex SUDOKU 3</h4>
-                <iframe src="https://www.youtube.com/embed/5sl40Xk6M-0" title="YouTube video player" allowfullscreen></iframe>
-            </div>
-            <div class="video-item">
-                <h4>Solving complex SUDOKU 4</h4>
-                <iframe src="https://www.youtube.com/embed/hc1UWToxj68" title="YouTube video player" allowfullscreen></iframe>
-            </div>
-            <div class="video-item">
-                <h4>Solving complex SUDOKU 5</h4>
-                <iframe src="https://www.youtube.com/embed/o7sqNYYHm5s" title="YouTube video player" allowfullscreen></iframe>
-            </div>
-        </div>
+  <header class="navbar">
+    <div class="logo">Sun Business Books</div>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="books.html">Books</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="supplementary_materials.html">Materials</a></li>
+      <li><a href="mission.html">Mission</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </header>
 
+  <main class="supplementary-page">
+    <h1>Supplementary Materials</h1>
 
- <div class="video-container">
-            <div class="video-item">
-                <h4>practice of self-awareness</h4>
-                <iframe src="https://www.youtube.com/embed/hgskHM21kyU" title="YouTube video player" allowfullscreen></iframe>
-            </div>
- </div>      
-        
-    </main>
+    <section class="audio-section">
+      <h2>Meditation Audio</h2>
+      <div class="audio-card">
+        <h4>Female Voice Meditation</h4>
+        <p>Designed to help you relax and reconnect deeply with yourself.</p>
+        <audio controls src="assets/audio/MeditationGirl.mp3"></audio>
+      </div>
+      <div class="audio-card">
+        <h4>Male Voice Meditation</h4>
+        <p>Creates a calm space for reflection and emotional balance.</p>
+        <audio controls src="assets/audio/MeditationMen.mp3"></audio>
+      </div>
+    </section>
 
-    <!-- Футер -->
-<footer>
-    <p>&copy; 2024 Sun Business Books. All Rights Reserved.</p>
-    <div id="powered-by">
-        <img src="assets/images/powered-by-gpt.png" alt="Powered by GPT">
-    </div>
-</footer>
+    <section class="videos-section">
+      <h2>Sudoku Tutorials</h2>
+      <div class="video-grid">
+        <iframe src="https://www.youtube.com/embed/g2HL6C_M2Dw" title="Sudoku 1" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/kbgJJaJc1tA" title="Sudoku 2" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/5sl40Xk6M-0" title="Sudoku 3" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/hc1UWToxj68" title="Sudoku 4" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/o7sqNYYHm5s" title="Sudoku 5" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <section class="videos-section">
+      <h2>Self-Awareness Practice</h2>
+      <div class="video-grid">
+        <iframe src="https://www.youtube.com/embed/hgskHM21kyU" title="Practice of Self-Awareness" allowfullscreen></iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Sun Business Books. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </footer>
+
 </body>
 </html>
