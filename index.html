@@ -1,73 +1,69 @@
+<!-- index.html | v1.0 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sun Business Books</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sun Business Books | Home</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
 </head>
 <body>
-
-  <!-- Навигация -->
   <header class="navbar">
     <div class="logo">Sun Business Books</div>
     <ul class="nav-menu">
       <li><a href="index.html">Home</a></li>
       <li><a href="books.html">Books</a></li>
-      <li><a href="video.html">Videos</a></li>
+      <li><a href="videos.html">Videos</a></li>
       <li><a href="supplementary_materials.html">Materials</a></li>
-      <li><a href="store.html">Store</a></li>
       <li><a href="mission.html">Mission</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
     </ul>
   </header>
 
-  <!-- Слоган -->
-  <section class="tagline">Where Light Becomes Business ✨</section>
-
-  <!-- Видео -->
-  <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/tuAprODsuCI?autoplay=1&mute=1&loop=1&playlist=tuAprODsuCI"
-      title="Intro Video" frameborder="0"
-      allow="autoplay; encrypted-media" allowfullscreen>
-    </iframe>
-  </div>
-
-  <!-- Контент -->
-  <main>
-    <section class="section">
-      <h2>🌞 About Us</h2>
-      <p>Sun Business Books was born from a deep desire to merge soul and strategy. Founded by a visionary author, athlete, and creator — <strong>Bauyrzhan Khamzin</strong> — our platform is a sanctuary for those seeking inspiration, growth, and clarity in a noisy world.</p>
-      <p>We believe that light can be structured, dreams can be published, and conscious creators can thrive with the right support. Our story is one of small steps, mindful action, and the beautiful interplay between technology, heart, and intention.</p>
+  <main class="home-page">
+    <section class="hero">
+      <video autoplay muted loop class="hero-video">
+        <source src="assets/video/Inro Video 2 1920x05.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="hero-text">
+        <h1>SUN BUSINESS SHINE.</h1>
+      </div>
     </section>
 
-    <section class="section">
-      <h2>📚 Explore Our Books</h2>
-      <p>Discover a growing collection of books that blend self-development, creativity, and modern insights. Each book is created with heart and intention — now available on Amazon.</p>
-      <a class="cta-button" href="https://www.amazon.com/author/bauyrzhan-khamzin" target="_blank">View Books on Amazon</a>
+    <section class="intro">
+      <h2>🤓 About Us</h2>
+      <p><strong>Sun Business Books</strong> is a publishing and media initiative that merges soul, strategy, and technology. We empower creators with books, tools, and inspiration to grow confidently in a mindful way.</p>
     </section>
 
-    <section class="section">
-      <h2>💡 What We Offer</h2>
-      <ul>
-        <li>Guided books with AI and QR codes</li>
-        <li>Printable coloring pages and mindful tools</li>
-        <li>Video meditations and creative support</li>
-      </ul>
+    <section class="features">
+      <div class="feature-block">
+        <h3>📖 Explore Our Books</h3>
+        <p>From guided journals to creative coloring books, explore titles that illuminate your path to clarity and growth.</p>
+        <a href="books.html" class="button">View Books</a>
+      </div>
+      <div class="feature-block">
+        <h3>🎧 Listen and Watch</h3>
+        <p>Experience audio meditations and videos designed to recharge your creative energy.</p>
+        <a href="videos.html" class="button">Media Library</a>
+      </div>
+      <div class="feature-block">
+        <h3>🚀 Bonus Materials</h3>
+        <p>Download printables, worksheets, and extra tools to support your learning and flow.</p>
+        <a href="supplementary_materials.html" class="button">Get Resources</a>
+      </div>
     </section>
   </main>
 
-  <!-- Подвал -->
   <footer>
-    <p>© 2025 Sun Business Books. All rights reserved.</p>
+    <p>&copy; 2025 Sun Business Books. All rights reserved.</p>
     <ul class="footer-links">
-      <li><a href="contact.html">Contact</a></li>
       <li><a href="privacy.html">Privacy Policy</a></li>
-      <li><a href="https://www.instagram.com/SunBusinessBooks" target="_blank">Instagram</a></li>
-      <li><a href="https://www.youtube.com/@SunBusinessBooks" target="_blank">YouTube</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </footer>
-
 </body>
 </html>
