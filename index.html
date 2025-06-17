@@ -1,16 +1,17 @@
-<!-- index.html | v1.0 -->
+<!-- index.html — Version 1.3 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sun Business Books | Home</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | Sun Business Books</title>
+  <link rel="stylesheet" href="css/styles.css" />
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
 </head>
 <body>
   <header class="navbar">
     <div class="logo">Sun Business Books</div>
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
     <ul class="nav-menu">
       <li><a href="index.html">Home</a></li>
       <li><a href="books.html">Books</a></li>
@@ -23,38 +24,18 @@
     </ul>
   </header>
 
-  <main class="home-page">
-    <section class="hero">
-      <video autoplay muted loop class="hero-video">
-        <source src="assets/video/Inro Video 2 1920x05.mp4" type="video/mp4">
+  <main>
+    <section class="hero-video">
+      <video id="introVideo" autoplay loop playsinline preload="auto" muted volume="0.3">
+        <source src="assets/video/Inro Video 2 1920x05.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <div class="hero-text">
-        <h1>SUN BUSINESS SHINE.</h1>
-      </div>
+      <button id="muteBtn">🔊</button>
     </section>
 
-    <section class="intro">
-      <h2>🤓 About Us</h2>
-      <p><strong>Sun Business Books</strong> is a publishing and media initiative that merges soul, strategy, and technology. We empower creators with books, tools, and inspiration to grow confidently in a mindful way.</p>
-    </section>
-
-    <section class="features">
-      <div class="feature-block">
-        <h3>📖 Explore Our Books</h3>
-        <p>From guided journals to creative coloring books, explore titles that illuminate your path to clarity and growth.</p>
-        <a href="books.html" class="button">View Books</a>
-      </div>
-      <div class="feature-block">
-        <h3>🎧 Listen and Watch</h3>
-        <p>Experience audio meditations and videos designed to recharge your creative energy.</p>
-        <a href="videos.html" class="button">Media Library</a>
-      </div>
-      <div class="feature-block">
-        <h3>🚀 Bonus Materials</h3>
-        <p>Download printables, worksheets, and extra tools to support your learning and flow.</p>
-        <a href="supplementary_materials.html" class="button">Get Resources</a>
-      </div>
+    <section class="intro-text">
+      <h1>Welcome to Sun Business Books</h1>
+      <p>Where inspiration meets strategy — and light becomes action.</p>
     </section>
   </main>
 
@@ -65,5 +46,18 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </footer>
+
+  <script>
+    const video = document.getElementById("introVideo");
+    const muteBtn = document.getElementById("muteBtn");
+
+    muteBtn.addEventListener("click", () => {
+      video.muted = !video.muted;
+      muteBtn.textContent = video.muted ? "🔇" : "🔊";
+    });
+
+    // Set default volume
+    video.volume = 0.3;
+  </script>
 </body>
 </html>
