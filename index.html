@@ -1,4 +1,4 @@
-<!-- index.html — Version 1.6 -->
+<!-- index.html — Version 1.7 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,17 +21,23 @@
       object-fit: cover;
       display: block;
     }
-    #muteBtn {
+    #muteBtn, #volumeSlider {
       position: absolute;
       bottom: 15px;
-      right: 15px;
       background: rgba(255, 255, 255, 0.7);
       border: none;
-      font-size: 1.2rem;
+      font-size: 1rem;
       cursor: pointer;
-      padding: 8px 12px;
+      padding: 8px;
       border-radius: 5px;
       z-index: 2;
+    }
+    #muteBtn {
+      right: 60px;
+    }
+    #volumeSlider {
+      right: 15px;
+      width: 100px;
     }
     .intro-text {
       padding: 40px 20px;
@@ -50,14 +56,21 @@
       color: #666;
     }
     .nav-menu {
+      display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: flex-end;
+      gap: 10px;
     }
     @media (max-width: 768px) {
       .nav-menu {
-        justify-content: center;
-        text-align: center;
+        flex-direction: column;
+        align-items: center;
         padding-left: 0;
+        background-color: #f0a500;
+        margin-top: 10px;
+      }
+      .hero-video {
+        margin-top: 10px;
       }
     }
   </style>
@@ -85,6 +98,7 @@
         Your browser does not support the video tag.
       </video>
       <button id="muteBtn">🔊</button>
+      <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.3" />
     </section>
 
     <section class="intro-text">
@@ -92,7 +106,6 @@
       <p>Where inspiration meets strategy — and light becomes action.</p>
     </section>
 
-    <!-- Контент -->
     <section class="section">
       <h2>🌞 About Us</h2>
       <p>Sun Business Books was born from a deep desire to merge soul and strategy. Founded by a visionary author, athlete, and creator — <strong>Bauyrzhan Khamzin</strong> — our platform is a sanctuary for those seeking inspiration, growth, and clarity in a noisy world.</p>
@@ -126,14 +139,18 @@
   <script>
     const video = document.getElementById("introVideo");
     const muteBtn = document.getElementById("muteBtn");
+    const volumeSlider = document.getElementById("volumeSlider");
 
     muteBtn.addEventListener("click", () => {
       video.muted = !video.muted;
       muteBtn.textContent = video.muted ? "🔇" : "🔊";
     });
 
-    // Set default volume
-    video.volume = 0.3;
+    video.volume = volumeSlider.value;
+
+    volumeSlider.addEventListener("input", () => {
+      video.volume = volumeSlider.value;
+    });
   </script>
 </body>
 </html>
