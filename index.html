@@ -1,4 +1,4 @@
-<!-- index.html — Version 2.0 (2025-06-25 by SunAI) -->
+<!-- index.html — Version 2.1 (2025-06-29 by SunAI) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,92 +7,12 @@
   <title>Home | Sun Business Books</title>
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
-  <style>
-    .hero-video {
-      position: relative;
-      width: 100%;
-      height: auto;
-      max-height: 100vh;
-      overflow: hidden;
-    }
-    .hero-video video {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      display: block;
-    }
-    #muteBtn, #volumeSlider {
-      position: absolute;
-      bottom: 15px;
-      background: rgba(255, 255, 255, 0.7);
-      border: none;
-      font-size: 1rem;
-      cursor: pointer;
-      padding: 8px;
-      border-radius: 5px;
-      z-index: 2;
-    }
-    #muteBtn {
-      right: 120px;
-    }
-    #volumeSlider {
-      right: 15px;
-      width: 100px;
-    }
-    .intro-text {
-      padding: 40px 20px;
-      text-align: center;
-      background-color: #fff;
-      position: relative;
-      z-index: 2;
-    }
-    .intro-text h1 {
-      font-size: 2rem;
-      color: #222;
-      margin-bottom: 10px;
-    }
-    .intro-text p {
-      font-size: 1.1rem;
-      color: #666;
-    }
-    .nav-menu {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 10px;
-      margin: 0;
-      padding: 0;
-    }
-    .nav-menu li {
-      list-style: none;
-    }
-    .nav-menu a {
-      text-decoration: none;
-      padding: 10px;
-      display: block;
-    }
-    @media (max-width: 768px) {
-      .nav-menu {
-        flex-direction: column;
-        align-items: center;
-        background-color: #f0a500;
-        width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        z-index: 5;
-      }
-      .hero-video {
-        margin-top: 160px;
-      }
-    }
-  </style>
 </head>
 <body>
   <header class="navbar">
     <div class="logo">Sun Business Books</div>
-    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-    <ul class="nav-menu">
+    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="nav-menu" id="navMenu">
       <li><a href="index.html">Home</a></li>
       <li><a href="books.html">Books</a></li>
       <li><a href="videos.html">Videos</a></li>
@@ -153,6 +73,8 @@
     const video = document.getElementById("introVideo");
     const muteBtn = document.getElementById("muteBtn");
     const volumeSlider = document.getElementById("volumeSlider");
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navMenu = document.getElementById("navMenu");
 
     video.volume = volumeSlider.value;
     video.muted = false;
@@ -164,6 +86,12 @@
 
     volumeSlider.addEventListener("input", () => {
       video.volume = volumeSlider.value;
+    });
+
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+      const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+      menuToggle.setAttribute("aria-expanded", !expanded);
     });
   </script>
 </body>
