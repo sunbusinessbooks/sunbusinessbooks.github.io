@@ -1,44 +1,41 @@
-<!-- index.html — Version 2.1 (2025-06-29 by SunAI) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home | Sun Business Books</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sun Business Books</title>
   <link rel="stylesheet" href="css/styles.css" />
-  <link rel="icon" type="image/png" href="assets/images/favicon.png">
 </head>
 <body>
+
+  <!-- Навигация -->
   <header class="navbar">
     <div class="logo">Sun Business Books</div>
-    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
-    <ul class="nav-menu" id="navMenu">
+    <ul class="nav-menu">
       <li><a href="index.html">Home</a></li>
       <li><a href="books.html">Books</a></li>
-      <li><a href="videos.html">Videos</a></li>
+      <li><a href="video.html">Videos</a></li>
       <li><a href="supplementary_materials.html">Materials</a></li>
+      <li><a href="store.html">Store</a></li>
       <li><a href="mission.html">Mission</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a href="privacy.html">Privacy</a></li>
     </ul>
   </header>
 
+  <!-- Слоган -->
+  <section class="tagline">Where Light Becomes Business ✨</section>
+
+  <!-- Видео -->
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/tuAprODsuCI?autoplay=1&mute=1&loop=1&playlist=tuAprODsuCI"
+      title="Intro Video" frameborder="0"
+      allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- Контент -->
   <main>
-    <section class="hero-video">
-      <video id="introVideo" autoplay loop playsinline preload="auto">
-        <source src="assets/video/Inro Video 2 1920x05.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <button id="muteBtn">🔊</button>
-      <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.3" />
-    </section>
-
-    <section class="intro-text">
-      <h1>Welcome to Sun Business Books</h1>
-      <p>Where inspiration meets strategy — and light becomes action.</p>
-    </section>
-
     <section class="section">
       <h2>🌞 About Us</h2>
       <p>Sun Business Books was born from a deep desire to merge soul and strategy. Founded by a visionary author, athlete, and creator — <strong>Bauyrzhan Khamzin</strong> — our platform is a sanctuary for those seeking inspiration, growth, and clarity in a noisy world.</p>
@@ -61,38 +58,16 @@
     </section>
   </main>
 
+  <!-- Подвал -->
   <footer>
-    <p>&copy; 2025 Sun Business Books. All rights reserved.</p>
+    <p>© 2025 Sun Business Books. All rights reserved.</p>
     <ul class="footer-links">
-      <li><a href="privacy.html">Privacy Policy</a></li>
       <li><a href="contact.html">Contact</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="https://www.instagram.com/SunBusinessBooks" target="_blank">Instagram</a></li>
+      <li><a href="https://www.youtube.com/@SunBusinessBooks" target="_blank">YouTube</a></li>
     </ul>
   </footer>
 
-  <script>
-    const video = document.getElementById("introVideo");
-    const muteBtn = document.getElementById("muteBtn");
-    const volumeSlider = document.getElementById("volumeSlider");
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navMenu = document.getElementById("navMenu");
-
-    video.volume = volumeSlider.value;
-    video.muted = false;
-
-    muteBtn.addEventListener("click", () => {
-      video.muted = !video.muted;
-      muteBtn.textContent = video.muted ? "🔇" : "🔊";
-    });
-
-    volumeSlider.addEventListener("input", () => {
-      video.volume = volumeSlider.value;
-    });
-
-    menuToggle.addEventListener("click", () => {
-      navMenu.classList.toggle("active");
-      const expanded = menuToggle.getAttribute("aria-expanded") === "true";
-      menuToggle.setAttribute("aria-expanded", !expanded);
-    });
-  </script>
 </body>
 </html>
