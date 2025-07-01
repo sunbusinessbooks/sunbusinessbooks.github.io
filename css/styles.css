@@ -37,13 +37,6 @@ body {
   list-style: none;
   display: flex;
   gap: 15px;
-  flex-wrap: wrap;
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-.nav-menu li {
-  white-space: nowrap;
 }
 
 .nav-menu li a {
@@ -227,15 +220,64 @@ footer {
   color: #fff;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .nav-menu {
-    flex-direction: column;
-    align-items: center;
-    padding-right: 15px;
-    background-color: #f8b400;
-  }
+/* Book Page Layout */
+.books-page {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
 
+.books-page h1 {
+  color: #f8b400;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.books-page .book-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 40px;
+  align-items: center;
+}
+
+.books-page .book-card img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+}
+
+.books-page .book-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.books-page .book-content h2 {
+  font-size: 1.3rem;
+  color: #f8b400;
+  margin-bottom: 10px;
+}
+
+.books-page .book-content p {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+.books-page .book-buttons {
+  margin-top: 15px;
+}
+
+.books-page .book-buttons .cta-button {
+  margin-right: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
   .books-page .book-card {
     flex-direction: column;
     text-align: center;
@@ -243,5 +285,12 @@ footer {
 
   .books-page .book-content {
     padding: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .nav-menu {
+    flex-direction: column;
+    gap: 10px;
   }
 }
