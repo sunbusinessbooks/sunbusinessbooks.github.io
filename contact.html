@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Мета-информация и favicon -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact | Sun Business Books</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
+  <!-- Затемнение меню на мобильных -->
   <div class="menu-overlay" id="menuOverlay"></div>
 
+  <!-- Навигационная панель -->
   <header class="navbar">
     <div class="logo">Sun Business Books</div>
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
@@ -19,13 +23,14 @@
       <li><a href="videos.html">Videos</a></li>
       <li><a href="supplementary_materials.html">Materials</a></li>
       <li><a href="mission.html">Mission</a></li>
-      <li><a href="ai-sun.html">AI-SUN</a></li>
+      <li><a href="ai-sun.html">AI-SUN</a></li> <!-- Новый пункт меню -->
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html" class="active">Contact</a></li>
       <li><a href="privacy.html">Privacy</a></li>
     </ul>
   </header>
 
+  <!-- Основной контент страницы -->
   <main class="contact-page">
     <section class="intro-text">
       <h1>Contact Us</h1>
@@ -34,7 +39,7 @@
 
     <section class="section">
       <h2>📩 Email</h2>
-      <p>For general inquiries: <a href="mailto:sunbusinessbooks@gmail.com">hello@sunbusinessbooks.com</a></p>
+      <p>For general inquiries: <a href="mailto:hello@sunbusinessbooks.com">hello@sunbusinessbooks.com</a></p>
     </section>
 
     <section class="section">
@@ -48,15 +53,17 @@
     </section>
   </main>
 
+  <!-- Футер -->
   <footer>
     <p>&copy; 2025 Sun Business Books. All rights reserved.</p>
     <ul class="footer-links">
       <li><a href="privacy.html">Privacy Policy</a></li>
-      <li><a href="ai-sun.html">AI-SUN</a></li>
+      <li><a href="ai-sun.html">AI-SUN</a></li> <!-- Добавлена ссылка на AI-SUN -->
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </footer>
 
+  <!-- Скрипт управления мобильным меню -->
   <script>
     const menuToggle = document.getElementById("menuToggle");
     const navMenu = document.getElementById("navMenu");
