@@ -2,82 +2,89 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Books | Sun Business Books</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="stylesheet" href="css/styles.css">
+  <meta name="description" content="Discover books by Bauyrzhan Khamzin — blending strategy, inspiration, and transformation.">
+  <meta name="keywords" content="Sun Business Books, Bauyrzhan Khamzin, inspiration, books, creativity, QR, AI">
 </head>
 <body>
+  <div class="menu-overlay" id="menuOverlay"></div>
 
   <header class="navbar">
     <div class="logo">Sun Business Books</div>
-    <ul class="nav-menu">
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    <ul class="nav-menu" id="navMenu">
       <li><a href="index.html">Home</a></li>
-      <li><a href="books.html">Books</a></li>
+      <li><a href="books.html" class="active">Books</a></li>
       <li><a href="videos.html">Videos</a></li>
       <li><a href="supplementary_materials.html">Materials</a></li>
       <li><a href="mission.html">Mission</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
     </ul>
   </header>
 
-  <main class="books-page">
-    <h1>Explore Our Books</h1>
+  <main>
+    <section class="intro-text">
+      <h1>📚 Our Books</h1>
+      <p>Books that awaken the soul and empower the mind — with AI guidance, QR access, and conscious design.</p>
+    </section>
 
-    <div class="book-card">
-      <img src="assets/images/book1.png" alt="Book 1">
-      <div class="book-content">
-        <h2>Path to Self-Discovery: Unleash Your Potential with Confidence and Inspiration</h2>
-        <p>Are you ready to stop drifting and start living with intention? Discover the profound power hidden in your daily choices and unlock the life you’ve always aspired to lead. This book blends timeless wisdom with practical tools for modern growth.</p>
-        <div class="book-buttons">
-          <audio controls src="assets/audio/book_ap1.mp3"></audio>
+    <section class="book-grid">
+      <!-- Book 1 -->
+      <div class="book-card">
+        <img src="assets/images/book1.jpg" alt="The Corridor by Bauyrzhan Khamzin">
+        <div class="card-content">
+          <h3>The Corridor</h3>
+          <p>A guide to higher awareness. This book is not just text — it's a journey into presence, clarity, and creative power.</p>
+          <div class="book-buttons">
+            <a href="https://www.amazon.com/dp/B0D4X5X3B2" target="_blank">📘 Amazon</a>
+            <a href="supplementary_materials.html">📎 Materials</a>
+            <audio controls src="assets/audio/koridor_preview.mp3"></audio>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="book-card">
-      <img src="assets/images/book2.png" alt="Book 2">
-      <div class="book-content">
-        <h2>Architect of Realities: Unlocking the Power of Logic, Creativity, and Dreams</h2>
-        <p>This book reveals how focused logic and imagination shape the world around us. Journey through insights that bridge ancient philosophy and futuristic consciousness, all while empowering you to design your own path of growth.</p>
-        <div class="book-buttons">
-          <audio controls src="assets/audio/book_ap2.mp3"></audio>
+      <!-- Book 2 -->
+      <div class="book-card">
+        <img src="assets/images/book2.jpg" alt="Inspiration Calendar by Bauyrzhan Khamzin">
+        <div class="card-content">
+          <h3>Inspiration Calendar</h3>
+          <p>A year of mindful prompts, creative rituals, and QR-connected insights. Designed for creators and conscious leaders.</p>
+          <div class="book-buttons">
+            <a href="https://www.amazon.com/dp/B0D4X6WXYZ" target="_blank">📘 Amazon</a>
+            <a href="supplementary_materials.html">📎 Materials</a>
+            <audio controls src="assets/audio/calendar_preview.mp3"></audio>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="book-card">
-      <img src="assets/images/book3.png" alt="Book 3">
-      <div class="book-content">
-        <h2>Mandala Inspirations: Classic Circular Mandalas</h2>
-        <p>Immerse yourself in timeless symmetry. This coloring book includes 54 unique mandalas paired with uplifting quotes to inspire peace, focus, and mindfulness through creative practice.</p>
-        <div class="book-buttons">
-          <audio controls src="assets/audio/book_ap3.mp3"></audio>
+      <!-- Book 3 -->
+      <div class="book-card">
+        <img src="assets/images/book3.jpg" alt="Conscious Sudoku by Bauyrzhan Khamzin">
+        <div class="card-content">
+          <h3>Conscious Sudoku</h3>
+          <p>Not just a puzzle book — a mental workout and meditation tool. Perfect for daily clarity and brain balance.</p>
+          <div class="book-buttons">
+            <a href="https://www.amazon.com/dp/B0D4X7AAAA" target="_blank">📘 Amazon</a>
+            <a href="supplementary_materials.html">📎 Materials</a>
+            <audio controls src="assets/audio/sudoku_preview.mp3"></audio>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="book-card">
-      <img src="assets/images/book4.png" alt="Book 4">
-      <div class="book-content">
-        <h2>Geometric Light: 54 Words of Inner Power</h2>
-        <p>Discover the intersection of geometry and inspiration. Each design comes with a motivational word to reflect on while coloring—bringing awareness and power into your daily flow.</p>
-        <div class="book-buttons">
-          <audio controls src="assets/audio/book_ap4.mp3"></audio>
-        </div>
-      </div>
-    </div>
-
-    <div class="book-card">
-      <img src="assets/images/book5.png" alt="Book 5">
-      <div class="book-content">
-        <h2>Moments of Mindfulness: 53 Inspirational Designs</h2>
-        <p>A collection of floral illustrations paired with affirmations for daily mindfulness and emotional clarity. Perfect for anyone seeking calm through art and presence.</p>
-        <div class="book-buttons">
-          <audio controls src="assets/audio/book_ap5.mp3"></audio>
-        </div>
-      </div>
-    </div>
+    <section class="section">
+      <h2>✨ Start Here</h2>
+      <ul>
+        <li>Begin with <strong>The Corridor</strong> if you're seeking depth and awareness.</li>
+        <li>Use the <strong>Inspiration Calendar</strong> for daily alignment and creative spark.</li>
+        <li>Try <strong>Conscious Sudoku</strong> to sharpen your mind and center your focus.</li>
+      </ul>
+    </section>
   </main>
 
   <footer>
@@ -85,8 +92,33 @@
     <ul class="footer-links">
       <li><a href="privacy.html">Privacy Policy</a></li>
       <li><a href="contact.html">Contact</a></li>
+      <li><a href="https://youtube.com/@sunbusinessbooks" target="_blank">YouTube Channel</a></li>
     </ul>
   </footer>
 
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+    const menuOverlay = document.getElementById("menuOverlay");
+
+    function toggleMenu() {
+      navMenu.classList.toggle("active");
+      menuOverlay.classList.toggle("active");
+      menuToggle.innerHTML = navMenu.classList.contains("active") ? "✕" : "☰";
+    }
+
+    function closeMenu() {
+      navMenu.classList.remove("active");
+      menuOverlay.classList.remove("active");
+      menuToggle.innerHTML = "☰";
+    }
+
+    menuToggle.addEventListener("click", toggleMenu);
+    menuOverlay.addEventListener("click", closeMenu);
+    navMenu.querySelectorAll("a").forEach(link => link.addEventListener("click", closeMenu));
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) closeMenu();
+    });
+  </script>
 </body>
 </html>
