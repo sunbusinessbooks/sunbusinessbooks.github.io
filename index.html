@@ -1,100 +1,23 @@
-<!-- index.html — Version 2.0 (2025-06-25 by SunAI) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home | Sun Business Books</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <title>Books | Sun Business Books</title>
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
-  <style>
-    .hero-video {
-      position: relative;
-      width: 100%;
-      height: auto;
-      max-height: 100vh;
-      overflow: hidden;
-    }
-    .hero-video video {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      display: block;
-    }
-    #muteBtn, #volumeSlider {
-      position: absolute;
-      bottom: 15px;
-      background: rgba(255, 255, 255, 0.7);
-      border: none;
-      font-size: 1rem;
-      cursor: pointer;
-      padding: 8px;
-      border-radius: 5px;
-      z-index: 2;
-    }
-    #muteBtn {
-      right: 120px;
-    }
-    #volumeSlider {
-      right: 15px;
-      width: 100px;
-    }
-    .intro-text {
-      padding: 40px 20px;
-      text-align: center;
-      background-color: #fff;
-      position: relative;
-      z-index: 2;
-    }
-    .intro-text h1 {
-      font-size: 2rem;
-      color: #222;
-      margin-bottom: 10px;
-    }
-    .intro-text p {
-      font-size: 1.1rem;
-      color: #666;
-    }
-    .nav-menu {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 10px;
-      margin: 0;
-      padding: 0;
-    }
-    .nav-menu li {
-      list-style: none;
-    }
-    .nav-menu a {
-      text-decoration: none;
-      padding: 10px;
-      display: block;
-    }
-    @media (max-width: 768px) {
-      .nav-menu {
-        flex-direction: column;
-        align-items: center;
-        background-color: #f0a500;
-        width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        z-index: 5;
-      }
-      .hero-video {
-        margin-top: 160px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="css/styles.css">
+  <meta name="description" content="Explore our collection of inspiring business books by Bauyrzhan Khamzin. Available on Amazon with audio versions and supplementary materials.">
+  <meta name="keywords" content="business books, self-development, creativity, Bauyrzhan Khamzin, Amazon books">
 </head>
 <body>
+  <div class="menu-overlay" id="menuOverlay"></div>
+  
   <header class="navbar">
     <div class="logo">Sun Business Books</div>
-    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-    <ul class="nav-menu">
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    <ul class="nav-menu" id="navMenu">
       <li><a href="index.html">Home</a></li>
-      <li><a href="books.html">Books</a></li>
+      <li><a href="books.html" class="active">Books</a></li>
       <li><a href="videos.html">Videos</a></li>
       <li><a href="supplementary_materials.html">Materials</a></li>
       <li><a href="mission.html">Mission</a></li>
@@ -105,39 +28,97 @@
   </header>
 
   <main>
-    <section class="hero-video">
-      <video id="introVideo" autoplay loop playsinline preload="auto">
-        <source src="assets/video/Inro Video 2 1920x05.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <button id="muteBtn">🔊</button>
-      <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.3" />
-    </section>
-
     <section class="intro-text">
-      <h1>Welcome to Sun Business Books</h1>
-      <p>Where inspiration meets strategy — and light becomes action.</p>
+      <h1>📚 Our Book Collection</h1>
+      <p>Discover transformative insights through our carefully crafted books, each designed to inspire growth and conscious action.</p>
     </section>
 
     <section class="section">
-      <h2>🌞 About Us</h2>
-      <p>Sun Business Books was born from a deep desire to merge soul and strategy. Founded by a visionary author, athlete, and creator — <strong>Bauyrzhan Khamzin</strong> — our platform is a sanctuary for those seeking inspiration, growth, and clarity in a noisy world.</p>
-      <p>We believe that light can be structured, dreams can be published, and conscious creators can thrive with the right support. Our story is one of small steps, mindful action, and the beautiful interplay between technology, heart, and intention.</p>
+      <h2>Available on Amazon</h2>
+      <p>All our books are available for purchase on Amazon in both digital and physical formats. Many include QR codes linking to supplementary materials, audio guides, and interactive content.</p>
+      <a class="cta-button" href="https://www.amazon.com/author/bauyrzhan-khamzin" target="_blank">Visit Our Amazon Store</a>
+    </section>
+
+    <div class="book-grid">
+      <!-- Book 1 -->
+      <div class="book-card">
+        <img src="assets/images/book1-cover.jpg" alt="Book Cover 1" loading="lazy">
+        <div class="card-content">
+          <h3>The Light Within Strategy</h3>
+          <p>A transformative guide to aligning your inner vision with actionable business strategies. Discover how to turn inspiration into sustainable success.</p>
+          <div class="book-buttons">
+            <a href="https://amazon.com/book1" target="_blank">Buy on Amazon</a>
+            <a href="supplementary_materials.html#book1">Materials</a>
+          </div>
+          <audio controls style="width: 100%; margin-top: 15px;">
+            <source src="assets/audio/book1-preview.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </div>
+
+      <!-- Book 2 -->
+      <div class="book-card">
+        <img src="assets/images/book2-cover.jpg" alt="Book Cover 2" loading="lazy">
+        <div class="card-content">
+          <h3>Conscious Leadership</h3>
+          <p>Navigate the modern business world with mindfulness and purpose. Learn to lead with both heart and strategy in an interconnected world.</p>
+          <div class="book-buttons">
+            <a href="https://amazon.com/book2" target="_blank">Buy on Amazon</a>
+            <a href="supplementary_materials.html#book2">Materials</a>
+          </div>
+          <audio controls style="width: 100%; margin-top: 15px;">
+            <source src="assets/audio/book2-preview.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </div>
+
+      <!-- Book 3 -->
+      <div class="book-card">
+        <img src="assets/images/book3-cover.jpg" alt="Book Cover 3" loading="lazy">
+        <div class="card-content">
+          <h3>Digital Mindfulness</h3>
+          <p>Balance technology and humanity in your business approach. Create digital experiences that honor both efficiency and human connection.</p>
+          <div class="book-buttons">
+            <a href="https://amazon.com/book3" target="_blank">Buy on Amazon</a>
+            <a href="supplementary_materials.html#book3">Materials</a>
+          </div>
+          <audio controls style="width: 100%; margin-top: 15px;">
+            <source src="assets/audio/book3-preview.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </div>
+
+      <!-- Book 4 -->
+      <div class="book-card">
+        <img src="assets/images/book4-cover.jpg" alt="Book Cover 4" loading="lazy">
+        <div class="card-content">
+          <h3>Creative Entrepreneurship</h3>
+          <p>Merge artistic vision with business acumen. A practical guide for creators who want to build sustainable, meaningful enterprises.</p>
+          <div class="book-buttons">
+            <a href="https://amazon.com/book4" target="_blank">Buy on Amazon</a>
+            <a href="supplementary_materials.html#book4">Materials</a>
+          </div>
+          <audio controls style="width: 100%; margin-top: 15px;">
+            <source src="assets/audio/book4-preview.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <h2>🎧 Audio Experiences</h2>
+      <p>Many of our books include guided audio experiences, meditations, and supplementary content. Use the QR codes in your physical books or access materials directly through our website.</p>
+      <a class="cta-button" href="supplementary_materials.html">Explore Materials</a>
     </section>
 
     <section class="section">
-      <h2>📚 Explore Our Books</h2>
-      <p>Discover a growing collection of books that blend self-development, creativity, and modern insights. Each book is created with heart and intention — now available on Amazon.</p>
-      <a class="cta-button" href="https://www.amazon.com/author/bauyrzhan-khamzin" target="_blank">View Books on Amazon</a>
-    </section>
-
-    <section class="section">
-      <h2>💡 What We Offer</h2>
-      <ul>
-        <li>Guided books with AI and QR codes</li>
-        <li>Printable coloring pages and mindful tools</li>
-        <li>Video meditations and creative support</li>
-      </ul>
+      <h2>📖 Reading Community</h2>
+      <p>Join our growing community of conscious readers and entrepreneurs. Share insights, ask questions, and connect with like-minded individuals on your growth journey.</p>
+      <a class="cta-button" href="contact.html">Join Community</a>
     </section>
   </main>
 
@@ -146,24 +127,84 @@
     <ul class="footer-links">
       <li><a href="privacy.html">Privacy Policy</a></li>
       <li><a href="contact.html">Contact</a></li>
+      <li><a href="https://www.amazon.com/author/bauyrzhan-khamzin" target="_blank">Amazon Store</a></li>
     </ul>
   </footer>
 
   <script>
-    const video = document.getElementById("introVideo");
-    const muteBtn = document.getElementById("muteBtn");
-    const volumeSlider = document.getElementById("volumeSlider");
+    // Mobile menu functionality
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+    const menuOverlay = document.getElementById("menuOverlay");
 
-    video.volume = volumeSlider.value;
-    video.muted = false;
+    function toggleMenu() {
+      navMenu.classList.toggle("active");
+      menuOverlay.classList.toggle("active");
+      
+      if (navMenu.classList.contains("active")) {
+        menuToggle.innerHTML = "✕";
+      } else {
+        menuToggle.innerHTML = "☰";
+      }
+    }
 
-    muteBtn.addEventListener("click", () => {
-      video.muted = !video.muted;
-      muteBtn.textContent = video.muted ? "🔇" : "🔊";
+    function closeMenu() {
+      navMenu.classList.remove("active");
+      menuOverlay.classList.remove("active");
+      menuToggle.innerHTML = "☰";
+    }
+
+    menuToggle.addEventListener("click", toggleMenu);
+    menuOverlay.addEventListener("click", closeMenu);
+
+    navMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", closeMenu);
     });
 
-    volumeSlider.addEventListener("input", () => {
-      video.volume = volumeSlider.value;
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        closeMenu();
+      }
+    });
+
+    // Lazy loading animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.section, .book-card').forEach(element => {
+      element.style.opacity = '0';
+      element.style.transform = 'translateY(30px)';
+      element.style.transition = 'all 0.6s ease-out';
+      observer.observe(element);
+    });
+
+    // Audio controls enhancement
+    document.querySelectorAll('audio').forEach(audio => {
+      audio.addEventListener('play', function() {
+        // Pause other audio elements when one starts playing
+        document.querySelectorAll('audio').forEach(otherAudio => {
+          if (otherAudio !== this && !otherAudio.paused) {
+            otherAudio.pause();
+          }
+        });
+      });
     });
   </script>
 </body>
