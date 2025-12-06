@@ -8,6 +8,72 @@
   <link rel="stylesheet" href="css/styles.css">
   <meta name="description" content="Watch inspiring videos, meditations, and educational content from Sun Business Books. Guided experiences for conscious entrepreneurs.">
   <meta name="keywords" content="business videos, meditation, guided experiences, conscious entrepreneurship, Bauyrzhan Khamzin">
+  <style>
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .video-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      border: 1px solid #e0e0e0;
+    }
+
+    .video-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      border-color: #f8b400;
+    }
+
+    .video-card .card-content {
+      padding: 20px;
+    }
+
+    .video-card .card-content h3 {
+      color: #f8b400;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .video-card .card-content p {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      font-size: 0.95rem;
+    }
+
+    .video-meta {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+      color: #888;
+    }
+
+    .video-meta span {
+      background: #f5f5f5;
+      padding: 4px 8px;
+      border-radius: 4px;
+      border: 1px solid #e0e0e0;
+    }
+
+    @media (max-width: 768px) {
+      .video-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 30px 15px;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="menu-overlay" id="menuOverlay"></div>
@@ -192,75 +258,7 @@
     </ul>
   </footer>
 
-  <style>
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .video-card {
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-      transition: all 0.3s ease;
-      border: 1px solid #e0e0e0;
-    }
-
-    .video-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-      border-color: #f8b400;
-    }
-
-    .video-card .card-content {
-      padding: 20px;
-    }
-
-    .video-card .card-content h3 {
-      color: #f8b400;
-      margin-bottom: 10px;
-      font-size: 1.2rem;
-      font-weight: 600;
-    }
-
-    .video-card .card-content p {
-      color: #666;
-      line-height: 1.6;
-      margin-bottom: 15px;
-      font-size: 0.95rem;
-    }
-
-    .video-meta {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-      font-size: 0.85rem;
-      color: #888;
-    }
-
-    .video-meta span {
-      background: #f5f5f5;
-      padding: 4px 8px;
-      border-radius: 4px;
-      border: 1px solid #e0e0e0;
-    }
-
-    @media (max-width: 768px) {
-      .video-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-        padding: 30px 15px;
-      }
-    }
-  </style>
-
   <script>
-    // Mobile menu functionality
     const menuToggle = document.getElementById("menuToggle");
     const navMenu = document.getElementById("navMenu");
     const menuOverlay = document.getElementById("menuOverlay");
@@ -268,18 +266,15 @@
     function toggleMenu() {
       navMenu.classList.toggle("active");
       menuOverlay.classList.toggle("active");
-      
-      if (navMenu.classList.contains("active")) {
-        menuToggle.innerHTML = "✕";
-      } else {
-        menuToggle.innerHTML = "☰";
-      }
+      menuToggle.innerHTML = navMenu.classList.contains("active") ? "✕" : "☰";
+      menuToggle.setAttribute("aria-expanded", navMenu.classList.contains("active"));
     }
 
     function closeMenu() {
       navMenu.classList.remove("active");
       menuOverlay.classList.remove("active");
       menuToggle.innerHTML = "☰";
+      menuToggle.setAttribute("aria-expanded", "false");
     }
 
     menuToggle.addEventListener("click", toggleMenu);
