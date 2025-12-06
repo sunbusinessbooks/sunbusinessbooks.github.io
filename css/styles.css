@@ -11,7 +11,7 @@ body {
   color: #333;
   background-color: #fff;
   padding-top: 70px;
-  overflow-x: hidden; /* Предотвращает горизонтальную прокрутку */
+  overflow-x: hidden;
 }
 
 /* Navbar */
@@ -20,6 +20,8 @@ body {
   padding: 10px 20px;
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   z-index: 1000;
   display: flex;
@@ -27,6 +29,7 @@ body {
   align-items: center;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   transition: background-color 0.3s ease;
+  box-sizing: border-box;
 }
 
 .navbar:hover {
@@ -39,6 +42,7 @@ body {
   color: white;
   text-decoration: none;
   transition: transform 0.3s ease;
+  flex-shrink: 0;
 }
 
 .logo:hover {
@@ -55,6 +59,8 @@ body {
   padding: 8px;
   border-radius: 4px;
   transition: all 0.3s ease;
+  flex-shrink: 0;
+  z-index: 1001;
 }
 
 .menu-toggle:hover {
@@ -69,12 +75,12 @@ body {
   margin: 0;
   padding: 0;
   flex-wrap: wrap;
-  max-width: 100%;
-  overflow: visible;
+  align-items: center;
 }
 
 .nav-menu li {
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .nav-menu li a {
@@ -501,6 +507,17 @@ html {
 }
 
 /* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .nav-menu {
+    gap: 10px;
+  }
+  
+  .nav-menu li a {
+    padding: 8px 12px;
+    font-size: 0.95rem;
+  }
+}
+
 @media (max-width: 768px) {
   body {
     padding-top: 60px;
@@ -528,6 +545,7 @@ html {
     max-height: calc(100vh - 60px);
     overflow-y: auto;
     border-radius: 0 0 10px 10px;
+    gap: 0;
   }
 
   .nav-menu.active {
