@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy | Sun Business Books</title>
-  <link rel="stylesheet" href="css/styles.css" />
   <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
@@ -85,19 +85,48 @@
       navMenu.classList.toggle("active");
       menuOverlay.classList.toggle("active");
       menuToggle.innerHTML = navMenu.classList.contains("active") ? "✕" : "☰";
+      menuToggle.setAttribute("aria-expanded", navMenu.classList.contains("active"));
     }
 
     function closeMenu() {
       navMenu.classList.remove("active");
       menuOverlay.classList.remove("active");
       menuToggle.innerHTML = "☰";
+      menuToggle.setAttribute("aria-expanded", "false");
     }
 
     menuToggle.addEventListener("click", toggleMenu);
     menuOverlay.addEventListener("click", closeMenu);
     navMenu.querySelectorAll("a").forEach(link => link.addEventListener("click", closeMenu));
+    
     window.addEventListener("resize", () => {
       if (window.innerWidth > 768) closeMenu();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMenu();
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.section').forEach(section => {
+      section.style.opacity = '0';
+      section.style.transform = 'translateY(30px)';
+      section.style.transition = 'all 0.6s ease-out';
+      observer.observe(section);
     });
   </script>
 
