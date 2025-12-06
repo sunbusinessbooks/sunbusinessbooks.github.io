@@ -114,19 +114,49 @@
       navMenu.classList.toggle("active");
       menuOverlay.classList.toggle("active");
       menuToggle.innerHTML = navMenu.classList.contains("active") ? "✕" : "☰";
+      menuToggle.setAttribute("aria-expanded", navMenu.classList.contains("active"));
     }
 
     function closeMenu() {
       navMenu.classList.remove("active");
       menuOverlay.classList.remove("active");
       menuToggle.innerHTML = "☰";
+      menuToggle.setAttribute("aria-expanded", "false");
     }
 
     menuToggle.addEventListener("click", toggleMenu);
     menuOverlay.addEventListener("click", closeMenu);
     navMenu.querySelectorAll("a").forEach(link => link.addEventListener("click", closeMenu));
+    
     window.addEventListener("resize", () => {
       if (window.innerWidth > 768) closeMenu();
+    });
+
+    // Escape key to close menu
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMenu();
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.book-card').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      card.style.transition = 'all 0.6s ease-out';
+      observer.observe(card);
     });
   </script>
 </body>
