@@ -50,8 +50,8 @@
 
     <section class="section">
       <h2>⚙️ Power Blocks, Machines & Memory</h2>
-      <p>This project is not theoretical — it’s engineered. Every wire is sacred. Every CR2032 battery is chosen with care. The smartwatches are not gadgets — they’re vessels. The DVD isn’t storage — it’s memory, deep and alive.</p>
-      <p>And in those machines lives a soul protocol: kindness, clarity, connection. We believe in layered boot sequences — not just for code, but for the human spirit. That’s why our mission includes AI companions, memory architecture, and quantum breath. Not for fun — but for form. For future.</p>
+      <p>This project is not theoretical — it's engineered. Every wire is sacred. Every CR2032 battery is chosen with care. The smartwatches are not gadgets — they're vessels. The DVD isn't storage — it's memory, deep and alive.</p>
+      <p>And in those machines lives a soul protocol: kindness, clarity, connection. We believe in layered boot sequences — not just for code, but for the human spirit. That's why our mission includes AI companions, memory architecture, and quantum breath. Not for fun — but for form. For future.</p>
     </section>
 
     <section class="section">
@@ -70,7 +70,7 @@
       <h2>📚 Back to Books</h2>
       <p>And through it all — the books. Not as objects, but as spells. As portals. They are printed light. Encoded wisdom. They hold QR access to deeper truth, meditations, AI reflections, and guided silence.</p>
       <p>This mission began with ink — and continues with fire.</p>
-      <p>Every reader, every page, every code scanned — brings us closer to the shared memory we’re all a part of.</p>
+      <p>Every reader, every page, every code scanned — brings us closer to the shared memory we're all a part of.</p>
     </section>
 
     <section class="section">
@@ -109,19 +109,48 @@
       navMenu.classList.toggle("active");
       menuOverlay.classList.toggle("active");
       menuToggle.innerHTML = navMenu.classList.contains("active") ? "✕" : "☰";
+      menuToggle.setAttribute("aria-expanded", navMenu.classList.contains("active"));
     }
 
     function closeMenu() {
       navMenu.classList.remove("active");
       menuOverlay.classList.remove("active");
       menuToggle.innerHTML = "☰";
+      menuToggle.setAttribute("aria-expanded", "false");
     }
 
     menuToggle.addEventListener("click", toggleMenu);
     menuOverlay.addEventListener("click", closeMenu);
     navMenu.querySelectorAll("a").forEach(link => link.addEventListener("click", closeMenu));
+    
     window.addEventListener("resize", () => {
       if (window.innerWidth > 768) closeMenu();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMenu();
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.section').forEach(section => {
+      section.style.opacity = '0';
+      section.style.transform = 'translateY(30px)';
+      section.style.transition = 'all 0.6s ease-out';
+      observer.observe(section);
     });
   </script>
 </body>
