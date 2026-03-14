@@ -83,18 +83,9 @@
     const muteBtn = document.getElementById("muteBtn");
     const volumeSlider = document.getElementById("volumeSlider");
 
-    // Initialize video - muted для autoplay, потом включим звук
-    video.volume = 0.3; // 30% громкости
-    volumeSlider.value = 0.3;
-
-    // Когда видео начнет играть, включаем звук
-    video.addEventListener('playing', function() {
-      setTimeout(() => {
-        video.muted = false;
-        muteBtn.textContent = "🔊";
-        muteBtn.setAttribute("aria-label", "Mute video");
-      }, 500); // Небольшая задержка для плавности
-    }, { once: true }); // Срабатывает только один раз
+    // Initialize video
+    video.volume = volumeSlider.value;
+    video.muted = true;
 
     muteBtn.addEventListener("click", () => {
       video.muted = !video.muted;
